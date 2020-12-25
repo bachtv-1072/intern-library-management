@@ -48,3 +48,6 @@ test/*
 /config/credentials.yml.enc
 /.framgia-ci-reports
 /vendor
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

@@ -1,0 +1,12 @@
+vi:
+  layouts:
+    admin:
+      sidebar:
+        logo: Quản lý thư viện
+        actor: Người quản lý
+        list: Danh sách quản lý
+        book: Quản lý sách
+        author: Quản lý tác giả
+      header:
+        home: Trang chủ
+        contact: Khác
