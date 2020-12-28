@@ -43,7 +43,7 @@ test/*
 .env
 .DS_Store
 .browserslistrc
-.ruby-version 
+.ruby-version
 /config/database.yml
 /config/credentials.yml.enc
 /.framgia-ci-reports
@@ -51,3 +51,5 @@ test/*
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+/spec/helpers
+/spec/requests

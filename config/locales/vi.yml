@@ -1,3 +1,4 @@
+
 vi:
   layouts:
     admin:
@@ -10,3 +11,15 @@ vi:
       header:
         home: Trang chủ
         contact: Khác
+  sessions:
+    new:
+      or: HOẶC
+      placeholder:
+        email: Tài khoản email
+        password: Mật khẩu
+      submit: Đăng nhập
+    message:
+      sucsess: Chào mừng bạn đến với thư viện
+      danger: Không thể đăng nhập
+    forgot: Quên tài khoản
+    remember: Nhớ tài khoản

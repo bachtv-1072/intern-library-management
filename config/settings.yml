@@ -1,2 +1,9 @@
 image:
   link_1: "http://placehold.it/128x128"
+validation:
+  user:
+    name_size: 50
+    email_size: 50
+    password_size: 6
+    format:
+      email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
