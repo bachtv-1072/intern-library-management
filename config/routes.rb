@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     namespace :admin do
       root "adminpages#home"
+      resources :users, only: %i(index destroy)
+      resources :books, only: :index
+      resources :categories do
+        resources :books, except: %i(new create)
+      end
+      resources :authors
+      resources :publisher
     end
     root "homepages#home"
 

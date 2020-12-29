@@ -7,3 +7,17 @@ validation:
     password_size: 6
     format:
       email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
+category:
+  length: 200
+book:
+  description:
+    length: 1000
+  quantity:
+    length: 100
+panigate:
+  category: 10
+author:
+  length:
+    name: 50
+    story: 1000
+    birth: 8
