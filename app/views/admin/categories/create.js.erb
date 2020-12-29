@@ -1,0 +1,7 @@
+<% if @status %>
+  toastr.success('<%= t 'categories.message.sucsses'%>')
+  $('.test').append("<%= j render 'category', category: @category,
+    category_counter: @index %>");
+<% else %>
+  toastr.error('<%= t 'categories.message.failer'%>')
+<% end %>

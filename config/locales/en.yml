@@ -6,6 +6,7 @@ en:
         actor: Admin
         list: List management
         book: Manage Book
+        category: Manage Category
         author: Manage Author
       header:
         home: Home
@@ -22,3 +23,25 @@ en:
       danger: Cant login
     forgot: Forgot Password
     remember: Remember me
+  books:
+    array: List Books
+    list:
+      column_id: ID
+      column_name: Name
+      column_quantity: Quantity
+      column_action: Action
+  categories:
+    placeholder: Enter...
+    file: Choose...
+    submit: Create
+    create: Create Category
+    message:
+      sucsses: Tạo thành công
+      failer: Tạo thất bại
+    array: List Category
+    list:
+      column_id: Id
+      column_name: Title
+      column_action: Action
+    show:
+      title: List Books Belong To

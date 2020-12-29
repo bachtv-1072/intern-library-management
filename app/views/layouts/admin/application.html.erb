@@ -15,6 +15,7 @@
       <%= render "layouts/admin/sidebar" %>
       <div class="content-wrapper">
         <%= yield %>
+        <%= toastr_flash %>
       </div>
       <%= render "layouts/admin/footer" %>
     </div>
