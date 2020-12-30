@@ -10,3 +10,15 @@ en:
       header:
         home: Home
         contact: Contact
+  sessions:
+    new:
+      or: OR
+      placeholder:
+        email: Email
+        password: Password
+      submit: Submit
+    message:
+      sucsess: Welcome to Library
+      danger: Cant login
+    forgot: Forgot Password
+    remember: Remember me
