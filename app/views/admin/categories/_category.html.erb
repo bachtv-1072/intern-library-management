@@ -1,0 +1,28 @@
+<tr class="createCategory">
+  <td class="td-index-counter-book">
+    <%= page_index params[:page], category_counter,
+      Settings.panigate.category %>
+  </td>
+  <td>
+    <%= link_to category.title, admin_category_path(category) %>
+  </td>
+  <td>
+    <%= link_to "#",
+      data: { toggle: "modal", target: "#category-#{category.id}" }  do %>
+      <span class="badge rounded-pill bg-info text-dark">
+        <i class="fas fa-eye" style="color:black"></i>
+      </span>
+    <% end %>
+    <%= render "show_category", category: category %>
+    <%= link_to "#" do %>
+      <span class="badge rounded-pill bg-success">
+        <i class="fas fa-edit" style="color:black"></i>
+      </span>
+    <% end %>
+    <%= link_to "#" do %>
+      <span class="badge rounded-pill bg-danger">
+        <i class="fas fa-trash-alt" style="color:black"></i>
+      </span>
+    <% end %>
+  </td>
+</tr>

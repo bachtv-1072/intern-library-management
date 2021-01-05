@@ -9,7 +9,7 @@ environment.plugins.prepend(
     jQuery: "jquery",
     jquery: "jquery",
     "window.Tether": "tether",
-    Popper: ["popper.js", "default"] 
+    Popper: ["popper.js", "default"]
   })
 );
 

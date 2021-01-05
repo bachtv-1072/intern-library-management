@@ -1,0 +1,25 @@
+<tr>
+  <td>
+    <%= page_index params[:page], book_counter,
+      Settings.panigate.category %>
+  </td>
+  <td><%= book.name %></td>
+  <td><%= book.quantity %></td>
+  <td>
+    <%= link_to "#" do %>
+      <span class="badge rounded-pill bg-info text-dark">
+        <i class="fas fa-eye" style="color:black"></i>
+      </span>
+    <% end %>
+    <%= link_to "#" do %>
+      <span class="badge rounded-pill bg-success">
+        <i class="fas fa-edit" style="color:black"></i>
+      </span>
+    <% end %>
+    <%= link_to "#" do %>
+      <span class="badge rounded-pill bg-danger">
+        <i class="fas fa-trash-alt" style="color:black"></i>
+      </span>
+    <% end %>
+  </td>
+</tr>

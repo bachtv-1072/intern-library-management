@@ -1,4 +1,3 @@
-
 vi:
   layouts:
     admin:
@@ -7,7 +6,8 @@ vi:
         actor: Người quản lý
         list: Danh sách quản lý
         book: Quản lý sách
-        author: Quản lý tác giả
+        category: Quản lý danh mục
+        author: Quản lý tác giải
       header:
         home: Trang chủ
         contact: Khác
@@ -23,3 +23,25 @@ vi:
       danger: Không thể đăng nhập
     forgot: Quên tài khoản
     remember: Nhớ tài khoản
+  books:
+    array: Danh sách các cuốn sách
+    list:
+      column_id: STT
+      column_name: Tên
+      column_quantity: Số lượng
+      column_action: Hành động
+  categories:
+    placeholder: Nhập...
+    file: Chọn thư mục...
+    submit: Tạo mới
+    create: Tạo thể loại mới
+    message:
+      sucsses: Tạo thành công
+      failer: Tạo thất bại
+    array: Danh sách thể loại
+    list:
+      column_id: STT
+      column_name: Thể loại
+      column_action: Hành động
+    show:
+      title: Danh sách các cuốn sách thuộc về

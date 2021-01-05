@@ -27,15 +27,21 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <%= link_to "#", class:"nav-link active" do %>
+              <%= link_to admin_books_path, class:"nav-link active" do %>
                 <i class="far fa-circle nav-icon"></i>
                 <p><%= t ".book"%></p>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "#", class:"nav-link " do %>
+              <%= link_to admin_authors_path, class:"nav-link " do %>
                 <i class="far fa-circle nav-icon"></i>
                 <p><%= t ".author"%></p>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_categories_path, class:"nav-link " do %>
+                <i class="far fa-circle nav-icon"></i>
+                <p><%= t ".category"%></p>
               <% end %>
             </li>
           </ul>
