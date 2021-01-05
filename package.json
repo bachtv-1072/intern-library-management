@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
+    "@nathanvda/cocoon": "^1.2.14",
     "@popperjs/core": "^2.6.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -10,6 +11,7 @@
     "@rails/webpacker": "4.3.0",
     "admin-lte": "3",
     "bootstrap": "^4.5.3",
+    "cocoon-js": "^0.0.5",
     "datatables.net-bs4": "^1.10.23",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",

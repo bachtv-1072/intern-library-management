@@ -15,8 +15,8 @@ require('admin-lte');
 require('datatables.net-bs4');
 import $ from 'jquery';
 global.$ = jQuery;
-
-global.toastr = require('toastr')
+global.toastr = require('toastr');
+import "cocoon-js";
 import '../stylesheets/application';
 import '@fortawesome/fontawesome-free/js/all';
 // Uncomment to copy all static images under ../images to the output folder and reference

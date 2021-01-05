@@ -4,12 +4,17 @@ Rails.application.routes.draw do
     namespace :admin do
       root "adminpages#home"
       resources :users, only: %i(index destroy)
-      resources :books, only: :index
+      resources :publishers
+      resources :book_details, only: :create
+      resources :books, only: %i(index new)
       resources :categories do
+<<<<<<< HEAD
         resources :books, except: %i(new create)
+=======
+        resources :books, except: :new
+>>>>>>> 7d6959d (Task 33084)
       end
       resources :authors
-      resources :publisher
     end
     root "homepages#home"
 

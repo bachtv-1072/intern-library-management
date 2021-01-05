@@ -4,9 +4,15 @@ $(window).on('turbolinks:load', function() {
       'bInfo': false,
       'bPaginate': false
     });
-
     $('#category').DataTable({
       'bInfo': false,
+      'bPaginate': false
+    });
+  });
+
+  $(document).ready(function(){
+    $('#author').DataTable({
+      "bInfo": false,
       'bPaginate': false
     });
   });
