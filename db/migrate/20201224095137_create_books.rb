@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration[6.0]
       t.integer :quantity
       t.integer :category_id, foreign_key: true, null: false
 
-      t.timestamps 
+      t.timestamps
     end
   end
 end

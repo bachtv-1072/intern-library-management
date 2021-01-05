@@ -1,16 +1,12 @@
-<tr>
+<tr class="createCategory">
   <td>
-    <%= page_index params[:page], book_counter,
+    <%= page_index params[:page], publisher_counter,
       Settings.panigate.category %>
   </td>
-  <td><%= book.name %></td>
-  <td><%= book.quantity %></td>
   <td>
-    <%= link_to "#" do %>
-      <span class="badge rounded-pill bg-info text-dark">
-        <i class="fas fa-eye"></i>
-      </span>
-    <% end %>
+    <%= publisher.name %>
+  </td>
+  <td>
     <%= link_to "#" do %>
       <span class="badge rounded-pill bg-success">
         <i class="fas fa-edit"></i>

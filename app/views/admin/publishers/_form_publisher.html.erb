@@ -1,0 +1,28 @@
+<button type="button" class="btn btn-primary" data-toggle="modal"
+  data-target="#publishers">
+  <%= t "publishers.new"%>
+</button>
+
+<!-- The Modal -->
+<div class="modal fade" id="publishers">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;
+        </button>
+      </div>
+      <%= form_with model: [:admin, @publisher] do |f| %>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :name, t("publishers.list.name") %>
+            <%= f.text_field :name, class:"form-control" ,
+              placeholder: t("categories.placeholder") %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit t("categories.submit"), class:"btn btn-outline-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
