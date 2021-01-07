@@ -9,5 +9,15 @@ $(window).on('turbolinks:load', function() {
       'bInfo': false,
       'bPaginate': false
     });
+
+    $('#author').DataTable({
+      'bInfo': false,
+      'bPaginate': false
+    });
+
+    $('#publisher').DataTable({
+      'bInfo': false,
+      'bPaginate': false
+    });
   });
 })

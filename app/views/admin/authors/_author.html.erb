@@ -1,10 +1,10 @@
 <tr>
   <td>
-    <%= page_index params[:page], book_counter,
+    <%= page_index params[:page], author_counter,
       Settings.panigate.category %>
   </td>
-  <td><%= book.name %></td>
-  <td><%= book.quantity %></td>
+  <td><%= author.name %></td>
+  <td><%= author.birth %></td>
   <td>
     <%= link_to "#" do %>
       <span class="badge rounded-pill bg-info text-dark">

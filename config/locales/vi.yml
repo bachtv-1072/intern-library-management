@@ -7,7 +7,8 @@ vi:
         list: Danh sách quản lý
         book: Quản lý sách
         category: Quản lý danh mục
-        author: Quản lý tác giải
+        author: Quản lý tác giả
+        publisher: Quản lý nhà cung cấp
       header:
         home: Trang chủ
         contact: Khác
@@ -24,6 +25,17 @@ vi:
     forgot: Quên tài khoản
     remember: Nhớ tài khoản
   books:
+    index: Tạo cuốn sách
+    new:
+      name: Nhập tên cuốn sách
+      descripton: Thêm mô tả cho cuốn sách
+      quantity: Nhập số lượng cuốn sách
+      category: Chọn thể loại
+      publisher: Chọn nhà phát hành
+      author: Chọn tác giả
+      addImage: Thêm ảnh cho cuốn sách
+      removeImage: Xoá lựa chọn
+      submit: Tạo
     array: Danh sách các cuốn sách
     list:
       column_id: STT
@@ -45,3 +57,17 @@ vi:
       column_action: Hành động
     show:
       title: Danh sách các cuốn sách thuộc về
+  authors:
+    index:
+      list: Danh sách tác giả
+      name: Tên tác giả
+      birth: Năm sinh
+    create:
+      make: Tạo tác giả
+      description: Thêm mô tả
+      birth: Ngày tháng năm sinh nhập dưới dạng d/m/y
+  publishers:
+    new: Tạo nhà cung cấp
+    list:
+      table: Danh sách nhà cung cấp
+      name: Tên nhà cung cấp

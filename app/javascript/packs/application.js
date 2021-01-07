@@ -13,6 +13,7 @@ window.$ = window.jQuery = jQuery;
 require('bootstrap');
 require('admin-lte');
 require('datatables.net-bs4');
+require('@nathanvda/cocoon')
 import $ from 'jquery';
 global.$ = jQuery;
 

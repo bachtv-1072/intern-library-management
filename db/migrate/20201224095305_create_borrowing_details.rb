@@ -5,7 +5,7 @@ class CreateBorrowingDetails < ActiveRecord::Migration[6.0]
       t.integer :borrowing_id, foreign_key: true, null: false
       t.integer :user_id, foreign_key: true, null: false
 
-      t.timestamps 
+      t.timestamps
     end
   end
 end
