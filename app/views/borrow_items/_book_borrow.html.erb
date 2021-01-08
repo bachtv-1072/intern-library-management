@@ -14,7 +14,7 @@
     <%= link_to book_borrow.name ,"#"%>
   </td>
   <td class="product-remove">
-    <%= link_to "#" do %>
+    <%= link_to borrow_item_path(book_borrow), method: :delete, remote: true do %>
       <i class="far fa-trash-alt"></i>
     <% end %>
   </td>
