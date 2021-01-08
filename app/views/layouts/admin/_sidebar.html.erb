@@ -50,6 +50,29 @@
                 <p><%= t ".publisher"%></p>
               <% end %>
             </li>
+            <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                  <%= t ".borrowing" %>
+                  <span class="right badge badge-danger"><%= t ".new" %></span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <%= link_to list_append_path, class:"nav-link" do %>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p><%= t ".append" %></p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to list_paying_path, class:"nav-link" do %>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p><%= t ".paying" %></p>
+                <% end %>
+              </li>
+            </ul>
+          </li>
           </ul>
         </li>
       </ul>

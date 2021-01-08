@@ -8,11 +8,26 @@ class Borrowing < ApplicationRecord
 
   accepts_nested_attributes_for :borrow_items
 
-  enum status: {pending: 0, accept: 1, cancel: 2}
+  delegate :name, to: :user, prefix: true, allow_nil: true
+  delegate :email, to: :user, prefix: true, allow_nil: true
+
+  enum status: {pending: 0, accept: 1, cancel: 2, payed: 3}
 
   before_save :save_borrow_code
+  after_update :return_quantity
 
   private
+
+  def return_quantity
+    return unless payed?
+
+    borrow_items.each do |borrow_item|
+      borrow_item.book.update_attribute(
+        :quantity_borrowed,
+        borrow_item.book.quantity_borrowed + Settings.number
+      )
+    end
+  end
 
   def generate_borrow_code
     code = [*("A".."Z")].sample(Settings.random).join
