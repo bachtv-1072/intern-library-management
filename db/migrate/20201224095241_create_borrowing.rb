@@ -4,7 +4,7 @@ class CreateBorrowing < ActiveRecord::Migration[6.0]
       t.datetime :date_borrow, index: true
       t.datetime :date_pay
       t.integer :status
-      t.integer :user_id, foreign_key: true, null: false
+      t.integer :user_id, foreign_key: true
 
       t.timestamps
     end

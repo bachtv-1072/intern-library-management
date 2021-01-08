@@ -12,6 +12,8 @@ class Book < ApplicationRecord
   belongs_to :authors, optional: true
   has_many :book_details, dependent: :destroy
   has_many :images, dependent: :destroy
+  has_many :borrow_items, dependent: :destroy
+  has_many :borrowings, through: :borrow_items
 
   accepts_nested_attributes_for :images, reject_if: :all_blank,
     allow_destroy: true
@@ -25,4 +27,6 @@ class Book < ApplicationRecord
     {less_than_or_equal_to: Settings.book.quantity.length, only_integer: true}
 
   delegate :title, to: :category, prefix: true, allow_nil: true
+
+  scope :get_cart, ->(array_ids){where id: array_ids}
 end

@@ -22,3 +22,5 @@ author:
     story: 1000
     birth: 20
 limit_book: 4
+borrow:
+  exist: 1
