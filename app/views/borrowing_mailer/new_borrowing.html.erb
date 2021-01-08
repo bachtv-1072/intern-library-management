@@ -1,0 +1,11 @@
+<h3><%= t "borrowing_mailer.dear" %><%= @borrowing.user_name %>,</h3>
+<p><%= t "borrowing_mailer.text " %></p>
+<p><%= t "borrowing_mailer.text_code" %>:<%= @borrowing.borrow_code %></p>
+
+<p><%= t "borrowing_mailer.text_1" %>:<%= @borrowing.borrow_items.size %></p>
+
+<h6><%= t "borrowing_mailer.text_2" %>:</h6>
+  <% @borrowing.borrow_items.each_with_index do |br, index| %>
+    <p><%= index + 1 %>.<%= br.book_name %></p><br>
+  <% end %>
+<%= t "borrowing_mailer.text_3" %>

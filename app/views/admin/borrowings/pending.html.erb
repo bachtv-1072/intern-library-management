@@ -1,0 +1,59 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1><%= t "borrowings.pending.content_1" %></h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item">
+            <%= link_to t("borrowings.pending.home"), admin_root_url %>
+          </li>
+          <li class="breadcrumb-item active"><%= t "borrowings.pending.pendd" %></li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"></h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table id="example3" class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th><%= t "borrowings.pending.id" %></th>
+                <th><%= t "borrowings.pending.code" %></th>
+                <th><%= t "borrowings.pending.name" %></th>
+                <th><%= t "borrowings.pending.time" %></th>
+                <th><%= t "borrowings.pending.status" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% Borrowing.pending.each_with_index do |br, index| %>
+                <tr>
+                  <td><%= index + Settings.number %></td>
+                  <td><%= br.borrow_code %></td>
+                  <td><%= br.user_name %></td>
+                  <td><%= time_ago_in_words br.created_at %></td>
+                  <td class="updateBorrowing">
+                    <%= link_to admin_borrowing_path(br), method: :patch, remote: true do %>
+                      <span class="badge badge-pill badge-warning">
+                        <%= t "borrowings.pending.pend" %>
+                      </span>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-  <%= link_to admin_root_path, class:"brand-link" do %>
+  <%= link_to admin_root_path, class: "brand-link" do %>
     <span class="brand-text font-weight-light"><%= t ".logo"%></span>
   <% end %>
 <!-- Sidebar -->
@@ -9,10 +9,10 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <%= image_tag "logo.jpg", class:"img-circle elevation-2", alt:"Logo" %>
+        <%= image_tag "logo.jpg", class: "img-circle elevation-2", alt:"Logo" %>
       </div>
       <div class="info">
-        <%= link_to t(".actor"), admin_root_path, class:"d-block" %>
+        <%= link_to t(".actor"), admin_root_path, class: "d-block" %>
       </div>
     </div>
     <nav class="mt-2">
@@ -27,29 +27,52 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <%= link_to admin_books_path, class:"nav-link active" do %>
+              <%= link_to admin_books_path, class: "nav-link active" do %>
                 <i class="far fa-circle nav-icon"></i>
                 <p><%= t ".book"%></p>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to admin_authors_path, class:"nav-link " do %>
+              <%= link_to admin_authors_path, class: "nav-link " do %>
                 <i class="far fa-circle nav-icon"></i>
                 <p><%= t ".author"%></p>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to admin_categories_path, class:"nav-link " do %>
+              <%= link_to admin_categories_path, class: "nav-link " do %>
                 <i class="far fa-circle nav-icon"></i>
                 <p><%= t ".category"%></p>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to admin_publishers_path, class:"nav-link " do %>
+              <%= link_to admin_publishers_path, class: "nav-link " do %>
                 <i class="far fa-circle nav-icon"></i>
                 <p><%= t ".publisher"%></p>
               <% end %>
             </li>
+            <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                <%= t ".borrowing" %>
+                <span class="right badge badge-danger"><%= t ".new" %></span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <%= link_to list_append_path, class: "nav-link" do %>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p><%= t ".append" %></p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to list_paying_path, class: "nav-link" do %>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p><%= t ".paying" %></p>
+                <% end %>
+              </li>
+            </ul>
+          </li>
           </ul>
         </li>
       </ul>

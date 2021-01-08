@@ -42,16 +42,22 @@
                   </ul>
                 </div>
                 <div class="price-box">
-                  <span></span>
+                  <span><%= @book.quantity_borrowed %></span>
                 </div>
                 <div class="product__overview">
                   <p><%= @book.description %></p>
                 </div>
                 <div class="box-tocart d-flex">
                   <div class="addtocart__actions">
-                    <%= form_for :borrow_item, url: borrow_items_url, remote: true do |f| %>
-                      <%= f.hidden_field :book_id, value: @book.id %>
-                      <%= f.submit t(".button_borrow"), class:"tocart" %>
+                    <% if @book.quantity_borrowed == 0 %>
+                      <span class="badge badge-pill badge-warning">
+                        <%= t ".sold" %>
+                      </span>
+                    <% else %>
+                      <%= form_for :borrow_item, url: borrow_items_url, remote: true do |f| %>
+                        <%= f.hidden_field :book_id, value: @book.id %>
+                        <%= f.submit t(".button_borrow"), class:"tocart" %>
+                      <% end %>
                     <% end %>
                   </div>
                 </div>
