@@ -1,6 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
   before_action :find_category, only: :show
-
   def index
     @categories = Category.page(params[:page]).per Settings.panigate.category
     @category = Category.new
@@ -16,7 +15,6 @@ class Admin::CategoriesController < Admin::BaseController
   def show
     @books = @category.books
   end
-
   private
 
   def find_category

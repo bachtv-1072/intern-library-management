@@ -12,6 +12,7 @@ vi:
       header:
         home: Trang chủ
         contact: Khác
+    header:
   sessions:
     new:
       or: HOẶC
@@ -36,6 +37,22 @@ vi:
       addImage: Thêm ảnh cho cuốn sách
       removeImage: Xoá lựa chọn
       submit: Tạo
+    show:
+      title: Thư viện
+      title_1: Trang chủ
+      quantity: Số lượng
+      category: Thể loại sách
+      category_all: Tất cả các thể loại
+      author_all: Tất cả các tác giả
+      share: Chia sẻ
+      button_borrow: Mượn
+      detail: Chi tiết
+      review: Phê duyệt
+      reviewing: Bạn đang phê duyệt cuốn
+      reviewer: Khách hàng phê duyệt
+      review_content: Nội dung phê duyệt
+      submit: Tạo nội dung
+      quatity: Chất lượng
     array: Danh sách các cuốn sách
     list:
       column_id: STT
@@ -71,3 +88,25 @@ vi:
     list:
       table: Danh sách nhà cung cấp
       name: Tên nhà cung cấp
+  homepages:
+    home:
+      contentbox:
+        contentbox_1: Thư viện quốc tế
+        contentbox_2: Thư viện trực tuyến tốt nhất
+        contentbox_3: Thư viện là thiết yếu trong quá trình cung cấp cho công
+          dân quyền tiếp cận tri thức. Trong thời đại kỹ thuật số, chúng cần
+          thiết hơn bao giờ hết.
+        online: Thư viện trực tuyến
+        best: tốt nhất
+        borrow_now: Mượn ngay
+      new: Mới
+      book: Các Cuốn Sách
+      content: Trong thời đại của internet, mọi người đều có thể đến thăm thư
+        viện mà không cần rời khỏi nhà. Bạn chỉ cần mở một trang web thư viện là
+        có thể mượn sách điện tử mà còn có thể hỏi thủ thư một câu hỏi trực tuyến.
+      hot: Mới
+      stay: Ở Lại Với Chúng Tôi
+      subcribe: Đăng ký các bản tin của chúng tôi ngay bây giờ và luôn cập nhật
+        các bộ sưu tập mới, các lookbook mới nhất và các ưu đãi độc quyền.
+      bt_Subscribe: Đăng kí
+      enter: Nhập địa chỉ email của bạn
