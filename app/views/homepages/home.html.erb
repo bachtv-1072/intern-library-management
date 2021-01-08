@@ -1,0 +1,89 @@
+<div class="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
+  <div class="slide animation__style10 bg-image--8 fullscreen align__center--left">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="slider__content">
+            <div class="contentbox">
+              <h3><%= t ".contentbox.contentbox_1"%></h3>
+              <h2><%= t ".contentbox.online"%> <span><%= t ".contentbox.best"%></span></h2>
+              <p><%= t ".contentbox.contentbox_3"%></p>
+              <%= link_to t(".contentbox.borrow_now"), "#", class:"shopbtn" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="wn__product__area brown--color pt--80  pb--30">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section__title text-center">
+          <h2 class="title__be--2"><%= t ".book" %>
+            <span class="color--theme"><%= t ".new" %></span>
+          </h2>
+          <p><%= t "homepages.home.content" %></p>
+        </div>
+      </div>
+    </div>
+    <div class="furniture--4 border--round arrows_style row mt--50">
+      <% @limit_new_books.each do |book| %>
+        <div class="product product__style--3">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div class="product__thumb">
+              <%= link_to book_path(book), class:"first__img" do %>
+                <%= image_tag book.images.first.link.to_s %>
+              <% end %>
+              <%= link_to book_path(book), class:"second__img animation1" do %>
+                <%= image_tag book.category.avatar %>
+              <% end %>
+              <div class="hot__box">
+                <span class="hot-label"><%= t ".hot" %></span>
+              </div>
+            </div>
+            <div class="product__content content--center">
+              <h4><a href="single-product.html"><%= book.name %></a></h4>
+              <ul class="prize d-flex">
+                <li></li>
+              </ul>
+              <div class="action">
+                <div class="actions_inner">
+                  <ul class="add_to_links">
+                    <li><a class="cart" href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+                    <li>
+                      <a data-toggle="modal" class="quickview modal-view detail-link" href="#productmodal">
+                        <i class="fas fa-search"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<section class="wn__newsletter__area bg-image--2">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--150">
+        <div class="section__title text-center">
+          <h2><%= t ".stay" %></h2>
+        </div>
+        <div class="newsletter__block text-center">
+          <p><%= t ".subcribe" %></p>
+          <form action="#">
+            <div class="newsletter__box">
+              <input type="email">
+              <button><%= t ".bt_Subscribe" %></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

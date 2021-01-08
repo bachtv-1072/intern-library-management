@@ -1,0 +1,75 @@
+<header id="wn__header" class="header__area header__absolute sticky__header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+        <div class="logo">
+          <%= link_to root_path do %>
+            <%= image_tag "3.png"%>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-lg-8 d-none d-lg-block">
+        <nav class="mainmenu__nav">
+          <ul class="meninmenu d-flex justify-content-start">
+            <li class="drop with--one--item">
+              <%= link_to t("books.show.title_1"), root_path %>
+            </li>
+            <li class="drop"><a href="#"></a>
+              <div class="megamenu mega03">
+                <ul class="item item03">
+                  <li class="title"></li>
+                </ul>
+                <ul class="item item03">
+                  <li class="title"></li>
+                </ul>
+              </div>
+            </li>
+            <li class="drop"><a href="#"></a>
+              <div class="megamenu mega03">
+                <ul class="item item03">
+                  <li class="title"></li>
+                </ul>
+                <ul class="item item03">
+                  <li class="title"></li>
+                </ul>
+                <ul class="item item03">
+                  <li class="title"></li>
+                </ul>
+              </div>
+            </li>
+            <li class="drop"><a href="#"></a>
+              <div class="megamenu mega02">
+                <ul class="item item02">
+                  <li class="title"></li>
+                </ul>
+                <ul class="item item02">
+                  <li class="title"></li>
+                </ul>
+              </div>
+            </li>
+            <li class="drop"><a href="#"></a>
+            </li>
+            <li class="drop"><a href="#"></a>
+            </li>
+            <li><a href="#"></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+        <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+          <li class="shop_search"><a class="search__active" href="#"></a></li>
+          <li class="wishlist"><a href="#"></a></li>
+          <li class="shopcart">
+            <%= link_to "#", class:"cartbox_active" do %>
+              <span class="product_qun"></span>
+            <% end %>
+          </li>
+          <li class="nav-item dropdown setting__bar__icon">
+            <a class="nav-link dropdown-toggle setting__active" href="#" id="navbardrop" data-toggle="dropdown">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

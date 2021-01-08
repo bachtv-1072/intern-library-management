@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       end
       resources :authors
     end
+    resources :books, only: :show
     root "homepages#home"
 
     get "/login", to: "sessions#new"
