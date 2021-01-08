@@ -1,0 +1,11 @@
+<% if @delete == Settings.borrow.exist %>
+  toastr.error('<%= t ".fail" %>')
+<% else %>
+  $('.product-remove').bind('ajax:success', function() {
+    $(this).closest('tr').fadeOut(100);
+  })
+  $('#creatBorrowItems').html('<%= j render "borrow_item", args: @args %>')
+  var new_quantity = parseInt($('.product_qun').html()) - 1;
+  $('.product_qun').html(new_quantity);
+  toastr.warning('<%= t ".succsess" %>')
+<% end %>
