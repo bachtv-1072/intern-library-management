@@ -1,0 +1,7 @@
+<% if @status == Settings.borrow.exist %>
+  toastr.error('<%= t "borrow_items.message_error" %>')
+<% else %>
+  toastr.success('<%= t "borrow_items.message_success" %>')
+  var new_quantity = parseInt($('.product_qun').html()) + 1;
+  $('.product_qun').html(new_quantity);
+<% end %>

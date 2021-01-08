@@ -12,7 +12,6 @@ vi:
       header:
         home: Trang chủ
         contact: Khác
-    header:
   sessions:
     new:
       or: HOẶC
@@ -110,3 +109,19 @@ vi:
         các bộ sưu tập mới, các lookbook mới nhất và các ưu đãi độc quyền.
       bt_Subscribe: Đăng kí
       enter: Nhập địa chỉ email của bạn
+  borrow_items:
+    message_error: Không được mượn 2 cuốn sách giống nhau
+    message_success: Mượn thành công
+    create:
+      message: Mượn thành công, mời bạn kiểm tra mail
+    index:
+      borrow: Mượn
+  borrowings:
+    index:
+      borrowing: Danh sách cuốn sách mượn
+      home: Trang chủ
+      id: STT
+      book: Cuốn sách
+      name: Tên sách
+      action: Xoá
+  require_login: Bạn cần phải đăng nhập

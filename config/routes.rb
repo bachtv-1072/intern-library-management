@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       resources :authors
     end
     resources :books, only: :show
+    resources :borrow_items, only: %i(create index destroy)
+    resources :borrowings, only: %i(index create)
+
     root "homepages#home"
 
     get "/login", to: "sessions#new"

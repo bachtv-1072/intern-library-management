@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_05_075630) do
+ActiveRecord::Schema.define(version: 2021_01_13_171625) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -60,6 +60,17 @@ ActiveRecord::Schema.define(version: 2021_01_05_075630) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "publisher_id", null: false
     t.integer "author_id", null: false
+    t.integer "quantity_borrowed"
+  end
+
+  create_table "borrow_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.bigint "book_id"
+    t.bigint "borrowing_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["book_id"], name: "index_borrow_items_on_book_id"
+    t.index ["borrowing_id"], name: "index_borrow_items_on_borrowing_id"
   end
 
   create_table "borrowing_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
@@ -74,10 +85,11 @@ ActiveRecord::Schema.define(version: 2021_01_05_075630) do
   create_table "borrowings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.datetime "date_borrow"
     t.datetime "date_pay"
-    t.integer "status"
-    t.integer "user_id", null: false
+    t.integer "status", default: 0
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "borrow_code"
     t.index ["date_borrow"], name: "index_borrowings_on_date_borrow"
   end
 
