@@ -19,5 +19,5 @@ $(window).on('turbolinks:load', function() {
       'bInfo': false,
       'bPaginate': false
     });
-  });
+  })
 })

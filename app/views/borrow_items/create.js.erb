@@ -1,0 +1,6 @@
+<% if @succsess %>
+  toastr.success('Borrowed Successfully')
+  $("#quantity_booked").html("<%= j render 'books/borrow_item'%>")
+<% else %>
+  toastr.error('Cant borrow')
+<% end %>

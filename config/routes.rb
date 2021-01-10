@@ -11,7 +11,11 @@ Rails.application.routes.draw do
       end
       resources :authors
     end
+    resources :borrow_items, only: %i(create destroy show)
     resources :books, only: :show
+    get "/search", to: "search#index"
+    resources :categories, only: :index
+    resources :borrowings, only: :index
     root "homepages#home"
 
     get "/login", to: "sessions#new"
