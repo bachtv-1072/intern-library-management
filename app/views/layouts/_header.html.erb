@@ -59,10 +59,10 @@
         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
           <li class="shop_search"><a class="search__active" href="#"></a></li>
           <li class="wishlist"><a href="#"></a></li>
-          <li class="shopcart">
-            <%= link_to "#", class:"cartbox_active" do %>
-              <span class="product_qun"></span>
-            <% end %>
+          <li class="shopcart" id="quantity_booked">
+              <% unless current_borrowing.borrow_items.present? %>
+                <%= render "books/borrow_item" %>
+              <% end %>
           </li>
           <li class="nav-item dropdown setting__bar__icon">
             <a class="nav-link dropdown-toggle setting__active" href="#" id="navbardrop" data-toggle="dropdown">

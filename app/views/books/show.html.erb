@@ -49,9 +49,10 @@
                 </div>
                 <div class="box-tocart d-flex">
                   <div class="addtocart__actions">
-                    <button class="tocart" type="submit">
-                      <%= t ".button_borrow" %>
-                    </button>
+                    <%= form_for @borrow_item, remote: true do |f| %>
+                      <%= f.submit t(".button_borrow"), class:"tocart" %>
+                      <%= f.hidden_field :book_id, value: @book.id %>
+                    <% end %>
                   </div>
                 </div>
                 <div class="product_meta">

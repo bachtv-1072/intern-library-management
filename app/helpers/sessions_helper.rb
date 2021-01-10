@@ -15,4 +15,16 @@ module SessionsHelper
     session.delete :current_user_id
     @current_user = nil
   end
+
+  def save_borrowing borrowing
+    session[:borrowing_id] = borrowing.id
+  end
+
+  def current_borrowing
+    if session[:borrowing_id].present?
+      Borrowing.find(session[:borrowing_id])
+    else
+      Borrowing.new
+    end
+  end
 end
