@@ -1,0 +1,157 @@
+<div class="ht__bradcaump__area bg-image--4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bradcaump__inner text-center">
+          <h2 class="bradcaump-title"><%= t ".title" %></h2>
+          <nav class="bradcaump-content">
+            <%= link_to t(".title_1"), "#", class:"breadcrumb_item" %>
+            <span class="brd-separetor">/</span>
+            <span class="breadcrumb_item active"><%= @book.name %></span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="maincontent bg--white pt--80 pb--55">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-12">
+        <div class="wn__single__product">
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <div class="wn__fotorama__wrapper">
+                <div class="fotorama wn__fotorama__action" data-nav="thumbs">
+                  <%= link_to "#" do %>
+                    <%= image_tag @book.images.first.link.to_s if @book.images.present? %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12">
+              <div class="product__info__main">
+                <h1><%= @book.name %></h1>
+                <div class="product-reviews-summary d-flex">
+                  <ul class="rating-summary d-flex">
+                    <li><i class="far fa-star"></i></li>
+                    <li><i class="far fa-star"></i></li>
+                    <li><i class="far fa-star"></i></li>
+                    <li class="off"><i class="far fa-star"></i></li>
+                    <li class="off"><i class="far fa-star"></i></li>
+                  </ul>
+                </div>
+                <div class="price-box">
+                  <span></span>
+                </div>
+                <div class="product__overview">
+                  <p><%= @book.description %></p>
+                </div>
+                <div class="box-tocart d-flex">
+                  <div class="addtocart__actions">
+                    <button class="tocart" type="submit">
+                      <%= t ".button_borrow" %>
+                    </button>
+                  </div>
+                </div>
+                <div class="product_meta">
+                  <span class="posted_in"><%= t ".category" %>:
+                    <%= link_to @book.category_title, "#" %>
+                  </span>
+                </div>
+                <div class="product-share">
+                  <ul>
+                    <li class="categories-title"><%= t ".share" %>:</li>
+                    <li>
+                      <%= link_to "#" do %>
+                        <i class="fab fa-twitter"></i>
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to "#" do %>
+                        <i class="fab fa-instagram"></i>
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to "#" do %>
+                        <i class="fab fa-facebook-f"></i>
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to "#" do %>
+                        <i class="fab fa-google"></i>
+                      <% end %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product__info__detailed">
+          <div class="pro_details_nav nav justify-content-start" role="tablist">
+            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-details" role="tab"><%= t ".detail" %></a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#nav-review" role="tab"><%= t ".review" %></a>
+          </div>
+          <div class="tab__container">
+            <div class="pro__tab_label tab-pane fade" id="nav-review" role="tabpanel">
+              <div class="review-fieldset">
+                <h2><%= t ".reviewing" %>:</h2>
+                <h3><%= @book.name %></h3>
+                <div class="review-field-ratings">
+                  <div class="product-review-table">
+                    <div class="review-field-rating d-flex">
+                      <span><%= t ".quatity" %></span>
+                      <ul class="rating d-flex">
+                        <li class="off"><i class="far fa-star"></i></li>
+                        <li class="off"><i class="far fa-star"></i></li>
+                        <li class="off"><i class="far fa-star"></i></li>
+                        <li class="off"><i class="far fa-star"></i></li>
+                        <li class="off"><i class="far fa-star"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="review_form_field">
+                  <div class="input__box">
+                    <span><%= t ".review_content" %></span>
+                    <textarea name="review"></textarea>
+                  </div>
+                  <div class="review-form-actions">
+                    <button><%= t ".submit" %></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
+        <div class="shop__sidebar">
+          <aside class="wedget__categories poroduct--cat">
+            <h3 class="wedget__title"><%= t ".category_all" %></h3>
+            <ul>
+              <li>
+                <% @categories.each do |category| %>
+                  <%= link_to "#" do %>
+                    <%= category.title %><span>(<%= category.books.size %>)</span>
+                  <% end  %>
+                <% end %>
+              </li>
+            </ul>
+          </aside>
+          <aside class="wedget__categories poroduct--tag">
+            <h3 class="wedget__title"><%= t ".author_all" %></h3>
+            <ul>
+              <% @authors.each do |author| %>
+                <li>
+                  <%= link_to author.name, "#" %>
+                </li>
+              <% end %>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
