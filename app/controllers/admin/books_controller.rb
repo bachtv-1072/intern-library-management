@@ -10,6 +10,7 @@ class Admin::BooksController < Admin::BaseController
   def create
     @book = Book.new book_params
     if @book.save
+      @book.update quantity_borrowed: @book.quantity
       flash[:success] = t "categories.message.sucsses"
       redirect_to admin_books_path
     else

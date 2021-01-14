@@ -1,17 +1,9 @@
 class BorrowItemsController < ApplicationController
   before_action :require_login, only: :create
   def index
-    @book_borrow = Book.get_cart session[:borrow_item]
-    @current_borrow = BorrowItem.new
-  end
-
-  def create
-    session[:borrow_item].each do |book_id|
-      @current_borrow = BorrowItem.create book_id: book_id
-    end
-    session[:borrow_item] = nil
-    flash[:success] = t "borrow_items.create.message"
-    redirect_to root_path
+    @book_borrow = Book.get_book_id_borrow_item session[:borrow_item]
+    @args = (logged_in?)? current_user.borrowings.build : Borrowing.new
+    @args.book_ids = session[:borrow_item]
   end
 
   def insert_book_to_session
@@ -27,9 +19,4 @@ class BorrowItemsController < ApplicationController
 
   def destroy; end
 
-  private
-
-  def borrow_item_params
-    params.require(:borrow_item).permit BorrowItem::BORROWITEM_PARAMS
-  end
 end

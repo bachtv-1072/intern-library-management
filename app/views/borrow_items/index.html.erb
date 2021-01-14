@@ -57,8 +57,10 @@
         <div class="cartbox__btn">
           <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
             <li>
-              <%= form_for @current_borrow do |f| %>
-                <%= f.hidden_field :user_id, value: current_user.id if logged_in? %>
+              <%= form_for @args do |f| %>
+                <%= f.fields_for :borrow_items do |ff| %>
+                  <%= ff.hidden_field :book_id %>
+                <% end %>
                 <%= f.submit "Borrow", class: "btn btn-outline-warning" %>
               <% end %>
             </li>

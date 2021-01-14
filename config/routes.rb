@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
     resources :books, only: :show
     resources :borrow_items, only: %i(index create destroy)
-    resources :borrowings, only: :index
+    resources :borrowings, only: %i(index create)
 
     root "homepages#home"
 

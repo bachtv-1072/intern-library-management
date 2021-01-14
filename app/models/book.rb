@@ -28,5 +28,5 @@ class Book < ApplicationRecord
 
   delegate :title, to: :category, prefix: true, allow_nil: true
 
-  scope :get_cart, ->(array_ids){where id: array_ids}
+  scope :get_book_id_borrow_item, ->(array_ids){where id: array_ids}
 end
