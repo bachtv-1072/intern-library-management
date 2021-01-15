@@ -1,0 +1,21 @@
+<tr>
+  <td class="td-index-counter-book">
+    <%= page_index params[:page], book_borrow_counter,
+      Settings.panigate.category %>
+  </td>
+  <% book_borrow.images.each do |image| %>
+    <td class="product-thumbnail">
+      <%= link_to book_path book_borrow do %>
+        <%= image_tag image.link_url if image.present? %>
+      <% end %>
+    </td>
+  <% end %>
+  <td class="product-name">
+    <%= link_to book_borrow.name ,"#"%>
+  </td>
+  <td class="product-remove">
+    <%= link_to "#" do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
+  </td>
+</tr>

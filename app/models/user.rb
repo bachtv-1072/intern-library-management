@@ -15,6 +15,8 @@ class User < ApplicationRecord
   validates :password, presence: true,
     length: {minimum: Settings.validation.user.password_size}
 
+  has_many :borrowings, dependent: :destroy
+
   enum role: {user: 0, admin: 1}
 
   before_save :downcase_email

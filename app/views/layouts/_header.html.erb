@@ -59,9 +59,9 @@
         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
           <li class="shop_search"><a class="search__active" href="#"></a></li>
           <li class="wishlist"><a href="#"></a></li>
-          <li class="shopcart">
-            <%= link_to "#", class:"cartbox_active" do %>
-              <span class="product_qun"></span>
+          <li class="shopcart" id="borrowingsSize">
+            <%= link_to borrow_items_path , class:"cartbox_active" do %>
+              <span class="product_qun"><%= session[:borrow_item] ? session[:borrow_item].length : 0 %></span>
             <% end %>
           </li>
           <li class="nav-item dropdown setting__bar__icon">
