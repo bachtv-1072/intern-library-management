@@ -13,4 +13,8 @@ module ApplicationHelper
     end
     safe_join @message
   end
+
+  def options_publisher
+    Publisher.pluck :name, :id
+  end
 end

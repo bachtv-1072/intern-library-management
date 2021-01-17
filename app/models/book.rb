@@ -35,4 +35,7 @@ class Book < ApplicationRecord
   scope :search_by_name, (lambda do |name|
     where "name LIKE ?", "%#{name}%" if name.present?
   end)
+  scope :filter_by_publisher, (lambda do |publisher_id|
+    where publisher_id: publisher_id if publisher_id.present?
+  end)
 end
