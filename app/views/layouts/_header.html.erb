@@ -15,7 +15,7 @@
               <%= link_to t("books.show.title_1"), root_path %>
             </li>
             <li class="drop">
-              <%= link_to t(".book"), "#" %>
+              <%= link_to t(".book"), books_path %>
               <div class="megamenu mega03">
                 <ul class="item item03">
                   <li class="title"><%= t ".cate" %></li>
@@ -53,7 +53,7 @@
                 <%= form_tag "/search", class: "form-inline", method: :get do %>
                   <%= text_field_tag :name, params[:name], class: "form-control mr-sm-2"%>
                   <div class="input-group-append">
-                     <%= submit_tag "Search", class: "btn btn-outline-secondary" %>
+                     <%= submit_tag t(".search"), class: "btn btn-outline-secondary" %>
                   </div>
                 <% end %>
               </div>

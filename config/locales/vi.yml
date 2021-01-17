@@ -8,6 +8,17 @@ vi:
         Trong sách có những bí mật của đạo đức - quy tắc của lương tâm
       trending: Xu hướng
       best_Seller: Cuốn sách hay
+    list_books:
+      navbar:
+        cate: Danh sách các thể loại
+        author: Danh sách tác giả
+      book:
+        best: Mượn nhiều
+        book: cuốn sách
+      header:
+        title: Danh sách tất cả các cuốn sách
+      sort_by:
+        title: Tìm kiếm theo nhà xuất bản
     header:
       home: Trang chủ
       contact: Khác
@@ -21,6 +32,7 @@ vi:
       logout: Đăng xuất
       borr: Phiếu mượn
       list: Danh sách phiếu mượn
+      search: Tìm kiếm
     admin:
       sidebar:
         logo: Quản lý thư viện
@@ -48,6 +60,8 @@ vi:
     remember: Nhớ tài khoản
   books:
     index: Tạo cuốn sách
+    comment:
+      review: Đánh giá bởi
     new:
       name: Nhập tên cuốn sách
       descripton: Thêm mô tả cho cuốn sách
@@ -59,6 +73,7 @@ vi:
       removeImage: Xoá lựa chọn
       submit: Tạo
     show:
+      no_comment: Không có bài đánh giá nào cho cuốn sách này
       title: Thư viện
       title_1: Trang chủ
       quantity: Số lượng
@@ -199,6 +214,13 @@ vi:
     error:
       title: Có tất cả là
       name: lỗi
+  search:
+    index:
+      not_found: Không có cuốn sách nào được tìm thấy .....
+  comments:
+    create:
+      message: Tạo thành công
+      fail: Tạo thất bại, thiếu nội dung
   admin:
     books:
       new:
