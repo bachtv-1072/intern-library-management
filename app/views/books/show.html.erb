@@ -102,6 +102,15 @@
           </div>
           <div class="tab__container">
             <div class="pro__tab_label tab-pane fade" id="nav-review" role="tabpanel">
+              <div class="review__attribute">
+                <% if @book.comments.present? %>
+                  <% @book.comments.each do |comment| %>
+                    <%= render "comment", comment: comment %>
+                  <% end %>
+                <% else %>
+                  <h4>No review for this book</h4>
+                <% end %>
+              </div>
               <div class="review-fieldset">
                 <h2><%= t ".reviewing" %>:</h2>
                 <h3><%= @book.name %></h3>
@@ -120,13 +129,16 @@
                   </div>
                 </div>
                 <div class="review_form_field">
-                  <div class="input__box">
-                    <span><%= t ".review_content" %></span>
-                    <textarea name="review"></textarea>
-                  </div>
-                  <div class="review-form-actions">
-                    <button><%= t ".submit" %></button>
-                  </div>
+                  <%= form_for :comment, url: book_comments_path(@book), remote: true do |f| %>
+                    <div class="input__box">
+                        <span><%= t ".review_content" %></span>
+                        <%= f.hidden_field :book_id, value: @book.id %>
+                        <%= f.text_area :content, class: "form-controll"%>
+                    </div>
+                    <div class="review-form-actions">
+                      <%= f.button t(".submit") %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
             </div>

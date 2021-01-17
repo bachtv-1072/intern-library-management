@@ -14,7 +14,7 @@ class Book < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :borrow_items, dependent: :destroy
   has_many :borrowings, through: :borrow_items
-
+  has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :images, reject_if: :all_blank,
     allow_destroy: true
 

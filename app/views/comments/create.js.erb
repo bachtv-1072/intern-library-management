@@ -1,0 +1,7 @@
+<% if @message %>
+  toastr.success('Comment succsessfull')
+  $('.review__attribute').append("<%= j render 'books/comment', comment: @comment %>");
+<% else %>
+ alert("no")
+  toastr.error('<%= t 'categories.message.failer'%>')
+<% end %>
