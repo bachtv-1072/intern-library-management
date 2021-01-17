@@ -1,0 +1,14 @@
+<div class="reviewAttribute">
+  <div class="review__ratings__type d-flex">
+    <div class="review-ratings">
+      <div class="rating-summary d-flex">
+        <span><%= comment.content %></span>
+      </div>
+    </div>
+    <div class="review-content">
+      <p><%= comment.user.name %></p>
+      <p><%= t ".review" %>:<%= comment.user.name %></p>
+      <p><%= time_ago_in_words comment.created_at if comment.created_at %></p>
+    </div>
+  </div>
+</div>

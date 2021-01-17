@@ -1,0 +1,30 @@
+<div class="list__view mt--40">
+  <div class="thumb">
+    <%= link_to book_path(book_second), class: "first__img" do %>
+      <%= image_tag book_second.images.first.link_url if book_second.images.present? %>
+    <% end %>
+    <%= link_to book_path(book_second), class: "second__img animation1" do %>
+      <%= image_tag book_second.category.avatar if book_second.category.avatar.present? %>
+    <% end %>
+  </div>
+  <div class="content">
+    <h2>
+      <%= link_to book_second.name, book_path(book_second)%>
+    </h2>
+    <ul class="rating d-flex">
+      <li class="on"><i class="fa fa-star-o"></i></li>
+      <li class="on"><i class="fa fa-star-o"></i></li>
+      <li class="on"><i class="fa fa-star-o"></i></li>
+      <li class="on"><i class="fa fa-star-o"></i></li>
+      <li><i class="fa fa-star-o"></i></li>
+      <li><i class="fa fa-star-o"></i></li>
+    </ul>
+    <ul class="prize__box">
+      <li><%= book_second.quantity_borrowed%>(books)</li>
+    </ul>
+    <p><%= book_second.description %></p>
+    <ul class="cart__action d-flex">
+      <li class="cart"><a href="cart.html">Borrow</a></li>
+    </ul>
+  </div>
+</div>
