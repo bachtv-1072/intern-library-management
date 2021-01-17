@@ -16,6 +16,10 @@ vi:
       header:
         home: Trang chủ
         contact: Khác
+  admin:
+    borrowings:
+      update:
+        message:  Chấp nhận
   sessions:
     new:
       or: HOẶC
@@ -30,6 +34,8 @@ vi:
     remember: Nhớ tài khoản
   books:
     index: Tạo cuốn sách
+    comment:
+      review: Đánh giá bởi
     new:
       name: Nhập tên cuốn sách
       descripton: Thêm mô tả cho cuốn sách
@@ -41,6 +47,7 @@ vi:
       removeImage: Xoá lựa chọn
       submit: Tạo
     show:
+      no_comment: Không có bài đánh giá nào cho cuốn sách này
       title: Thư viện
       title_1: Trang chủ
       quantity: Số lượng
@@ -162,3 +169,7 @@ vi:
     text_1: Số lượng cuốn sách bạn đang mượn là
     text_2: Đó là
     text_3: Xin cảm ơn!
+  comments:
+    create:
+      message: Đánh giá thành công
+      fail: Lỗi

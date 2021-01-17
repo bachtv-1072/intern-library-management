@@ -12,7 +12,9 @@ Rails.application.routes.draw do
       resources :authors
       resources :borrowings, only: :update
     end
-    resources :books, only: :show
+    resources :books, only: :show do
+      resources :comments, only: %i(create destroy)
+    end
     resources :borrow_items, only: %i(create index destroy)
     resources :borrowings, only: %i(index create)
 
