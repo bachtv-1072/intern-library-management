@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :books, only: %i(show index)
     resources :borrow_items, only: %i(create index destroy)
     resources :borrowings, only: %i(index create)
+    resources :publishers, only: :show
 
     root "homepages#home"
 

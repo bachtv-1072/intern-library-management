@@ -6,16 +6,13 @@
       </div>
       <p></p>
       <div class="orderby__wrapper">
-        <span>Sort By</span>
-        <select class="shot__byselect">
-          <option>Default sorting</option>
-          <option>HeadPhone</option>
-          <option>Furniture</option>
-          <option>Jewellery</option>
-          <option>Handmade</option>
-          <option>Kids</option>
-        </select>
+        <span>Sort by Publisher</span>
+        <%= select_tag :author_id, options_for_select(Publisher.all.pluck(:name, :id)),
+            class:"shot__byselect", id:"ajaxSearchCate"%>
       </div>
     </div>
   </div>
 </div>
+<script>
+
+</script>
