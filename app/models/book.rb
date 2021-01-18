@@ -30,4 +30,7 @@ class Book < ApplicationRecord
   delegate :title, to: :category, prefix: true, allow_nil: true
 
   scope :by_ids, ->(ids){where id: ids}
+  scope :search_by_name, (lambda do |name|
+    where "name LIKE ?", "%#{name}%" if name.present?
+  end)
 end

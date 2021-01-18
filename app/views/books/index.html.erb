@@ -1,0 +1,25 @@
+<%= render "layouts/list_books/header" %>
+<div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
+  <div class="container">
+    <div class="row">
+      <%= render "layouts/list_books/navbar" %>
+      <div class="col-lg-9 col-12 order-1 order-lg-2">
+        <%= render "layouts/list_books/sort_by" %>
+        <div class="tab__container">
+          <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
+            <div class="row">
+              <%= render partial: "layouts/list_books/book", collection: @books %>
+            </div>
+            <ul class="wn__pagination">
+            </ul>
+          </div>
+          <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
+            <div class="list__view__wrapper">
+              <%= render partial: "layouts/list_books/book_second", collection: @books %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
