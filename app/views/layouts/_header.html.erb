@@ -14,43 +14,50 @@
             <li class="drop with--one--item">
               <%= link_to t("books.show.title_1"), root_path %>
             </li>
-            <li class="drop"><a href="#"></a>
+            <li class="drop">
+              <%= link_to "Books", books_path%>
               <div class="megamenu mega03">
                 <ul class="item item03">
-                  <li class="title"></li>
+                  <li class="title">Categories</li>
                 </ul>
                 <ul class="item item03">
-                  <li class="title"></li>
+                  <li class="title">Authors</li>
+                </ul>
+                <ul class="item item03">
+                  <li class="title">Publisher</li>
                 </ul>
               </div>
             </li>
-            <li class="drop"><a href="#"></a>
+            <li class="drop"><a href="#">Page</a>
               <div class="megamenu mega03">
                 <ul class="item item03">
-                  <li class="title"></li>
+                  <li class="title">FAVOURITE</li>
                 </ul>
                 <ul class="item item03">
-                  <li class="title"></li>
+                  <li class="title">Colection</li>
                 </ul>
                 <ul class="item item03">
-                  <li class="title"></li>
+                  <li class="title">Top Colection</li>
                 </ul>
               </div>
             </li>
-            <li class="drop"><a href="#"></a>
-              <div class="megamenu mega02">
-                <ul class="item item02">
-                  <li class="title"></li>
-                </ul>
-                <ul class="item item02">
-                  <li class="title"></li>
-                </ul>
-              </div>
-            </li>
-            <li class="drop"><a href="#"></a>
-            </li>
-            <li class="drop"><a href="#"></a>
-            </li>
+            <% if logged_in? %>
+              <li class="drop"><a href="#">My Account</a>
+                <div class="megamenu mega02">
+                  <ul class="item item02">
+                    <li class="title">Account Details</li>
+                    <li><a href="shop-grid.html">Setting</a></li>
+                    <li>
+                      <%= link_to "Logout", logout_path, method: :delete %>
+                    </li>
+                  </ul>
+                  <ul class="item item03">
+                    <li class="title">Borrowing</li>
+                    <li><a href="my-account.html">List Borrowing</a></li>
+									</ul>
+                </div>
+              </li>
+            <% end %>
             <li class="formSearch">
               <div class="input-group mb-3">
                 <%= form_tag "/search", class: "form-inline", method: :get do %>
@@ -72,10 +79,11 @@
               <span class="product_qun"><%= session[:borrow_item] ? session[:borrow_item].length : 0 %></span>
             <% end %>
           </li>
-          <li class="nav-item dropdown setting__bar__icon">
-            <a class="nav-link dropdown-toggle setting__active" href="#" id="navbardrop" data-toggle="dropdown">
-            </a>
-          </li>
+          <% unless logged_in? %>
+            <li class="nav-item dropdown setting__bar__icon">
+              <%= link_to "", login_path, class:"nav-link dropdown-toggle setting__active"%>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

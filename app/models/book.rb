@@ -14,6 +14,7 @@ class Book < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :borrow_items, dependent: :destroy
   has_many :borrowings, through: :borrow_items
+  has_many :comments, dependent: :destroy
 
   accepts_nested_attributes_for :images, reject_if: :all_blank,
     allow_destroy: true
@@ -34,6 +35,6 @@ class Book < ApplicationRecord
     where "name LIKE ?", "%#{name}%" if name.present?
   end)
   scope :filter_book_by_publisher, (lambda do |author_id|
-    where "author_id = ?", "#{author_id}" if author_id.present?
+    where "author_id = ?", author_id.to_s if author_id.present?
   end)
 end
