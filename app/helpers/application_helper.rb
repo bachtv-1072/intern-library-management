@@ -13,4 +13,8 @@ module ApplicationHelper
     end
     safe_join @message
   end
+
+  def average_rating ratings
+    ratings.present? ? (ratings.map { |x| x.point.to_i }.sum.to_f / ratings.size).round(1) : 0
+  end
 end

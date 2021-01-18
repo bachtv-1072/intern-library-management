@@ -1,0 +1,11 @@
+<%= form_for :rating, url: book_ratings_path(@book),
+  remote: true, html: {id: "autoSubmit"} do |f| %>
+  Rating: <%= f.select :point,
+    options_for_select((1..5).map { |i| ["#{i}", i] }),{},
+    {class: 'form-control', id:"valueColum"}%>
+    <i class="fas fa-star" style="color: yellow;"></i>
+  <div>
+    <%= f.hidden_field :book_id, value: @book.id %>
+    <%= f.submit "Submit", class: "btn btn-secondary" %>
+  </div>
+<% end %>

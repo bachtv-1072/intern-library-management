@@ -1,0 +1,6 @@
+<% if @message %>
+  toastr.success('Rating successfully')
+  $('.review__attribute').append("<%= j render 'books/rating', book: @book %>");
+<% else %>
+  toastr.error('Cant rating')
+<% end %>
