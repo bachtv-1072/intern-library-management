@@ -12,10 +12,12 @@ Rails.application.routes.draw do
       resources :authors
       resources :borrowings, only: :update
     end
-    resources :books, only: %i(show index)
+    resources :books, only: %i(index show) do
+      resources :comments, only: %i(create destroy)
+    end
+
     resources :borrow_items, only: %i(create index destroy)
     resources :borrowings, only: %i(index create)
-    resources :publishers, only: :show
 
     root "homepages#home"
 
@@ -24,6 +26,5 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     get "/list_append", to: "admin/borrowings#pending"
     get "/list_paying", to: "admin/borrowings#paying"
-    get "/search", to: "search#index"
   end
 end

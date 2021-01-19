@@ -26,7 +26,7 @@ class Book < ApplicationRecord
   validates :quantity, presence: true,
     numericality:
     {less_than_or_equal_to: Settings.book.quantity.length, only_integer: true}
-  validates :quantity_borrowed, numericality: {only_integer: true}
+  validates :quantity_borrowed, numericality: {only_integer: true}, allow_nil: true
 
   delegate :title, to: :category, prefix: true, allow_nil: true
 
