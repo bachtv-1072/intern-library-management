@@ -9,6 +9,10 @@ vi:
         category: Quản lý danh mục
         author: Quản lý tác giả
         publisher: Quản lý nhà cung cấp
+        borrowing: Quản lý phiếu mượn
+        new: Mới
+        append: Chấp nhận
+        paying: Đang mượn
       header:
         home: Trang chủ
         contact: Khác
@@ -52,6 +56,7 @@ vi:
       review_content: Nội dung phê duyệt
       submit: Tạo nội dung
       quatity: Chất lượng
+      sold: Tạm thời sách được mượn hết
     array: Danh sách các cuốn sách
     list:
       column_id: STT
@@ -116,6 +121,9 @@ vi:
       message: Mượn thành công, mời bạn kiểm tra mail
     index:
       borrow: Mượn
+    destroy:
+      fail: Xoá thất bại
+      succsess: Xoá thành công
   borrowings:
     index:
       borrowing: Danh sách cuốn sách mượn
@@ -124,4 +132,33 @@ vi:
       book: Cuốn sách
       name: Tên sách
       action: Xoá
+    paying:
+      home: Trang chủ
+      content_1: Danh sách cuốn phiếu trạng thái đang mượn
+      content_2: Mượn
+      id: STT
+      code: Mã phiếu mượn
+      name: Tên người mượn
+      time: Ngày mượn
+      status: Trạng thái
+      pay: Đang mượn
+    pending:
+      content_1: Danh sách cuốn phiếu trạng thái đang chờ mượn
+      home: Trang chủ
+      pedd: Chờ
+      id: STT
+      code: Mã mượn
+      name: Tên người mượn
+      time: Thời gian gửi lời mời chấp nhận
+      status: Trạng thái
+      pend: Xác nhận
   require_login: Bạn cần phải đăng nhập
+  mailer:
+    title: Bạn có một đơn mượn sách mới!
+  borrowing_mailer:
+    dear: Thân
+    text: Bạn có một phiế mượn sách mới ở Thư Viện
+    text_code: Mã phiếu mượn của bạn là
+    text_1: Số lượng cuốn sách bạn đang mượn là
+    text_2: Đó là
+    text_3: Xin cảm ơn!

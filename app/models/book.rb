@@ -29,5 +29,5 @@ class Book < ApplicationRecord
 
   delegate :title, to: :category, prefix: true, allow_nil: true
 
-  scope :by_ids, ->(ids){where id: ids if ids.present?}
+  scope :by_ids, ->(ids){where id: ids}
 end

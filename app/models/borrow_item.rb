@@ -6,6 +6,8 @@ class BorrowItem < ApplicationRecord
 
   after_save :update_quantity_book
 
+  delegate :name, to: :book, prefix: true, allow_nil: true
+
   private
 
   def update_quantity_book
