@@ -42,14 +42,16 @@
                   </ul>
                 </div>
                 <div class="price-box">
-                  <span><%= @book.quantity_borrowed %></span>
+                  <% if @book.quantity_borrowed != Settings.quantity %>
+                    <span><%= t ".quantity" %>:<%= @book.quantity_borrowed %></span>
+                  <% end %>
                 </div>
                 <div class="product__overview">
                   <p><%= @book.description %></p>
                 </div>
                 <div class="box-tocart d-flex">
                   <div class="addtocart__actions">
-                    <% if @book.quantity_borrowed == 0 %>
+                    <% if @book.quantity_borrowed == Settings.quantity %>
                       <span class="badge badge-pill badge-warning">
                         <%= t ".sold" %>
                       </span>
@@ -142,6 +144,7 @@
                 <% @categories.each do |category| %>
                   <%= link_to "#" do %>
                     <%= category.title %><span>(<%= category.books.size %>)</span>
+                    <br>
                   <% end  %>
                 <% end %>
               </li>
@@ -153,6 +156,7 @@
               <% @authors.each do |author| %>
                 <li>
                   <%= link_to author.name, "#" %>
+                  <br>
                 </li>
               <% end %>
             </ul>

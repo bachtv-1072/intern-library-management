@@ -24,13 +24,14 @@
               <thead>
                 <tr class="title-top">
                   <th class="product-thumbnail"><%= t ".id" %></th>
-                  <th class="product-thumbnail"><%= t ".book" %></th>
-                  <th class="product-name"><%= t ".name" %></th>
-                  <th class="product-remove"><%= t ".action" %></th>
+                  <th class="product-thumbnail"><%= t ".code" %></th>
+                  <th class="product-name"><%= t ".quatity" %></th>
+                  <th class="product-remove"><%= t ".status" %></th>
+                  <th class="product-remove"><%= t ".date_pay" %></th>
                 </tr>
               </thead>
               <tbody>
-                <%= render partial: "book_borrow", collection: @book_borrows %>
+                <%= render @borrowings %>
               </tbody>
             </table>
           </div>
@@ -38,7 +39,7 @@
         <div class="cartbox__btn">
           <ul id="creatBorrowItems" class="cart__btn__list d-flex flex-wrap
             flex-md-nowrap flex-lg-nowrap justify-content-between">
-            <%= render "borrow_item", args: @args %>
+            <%= paginate @borrowings, theme: 'twitter-bootstrap-4' %>
           </ul>
         </div>
       </div>

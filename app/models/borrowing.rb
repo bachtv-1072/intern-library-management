@@ -12,14 +12,30 @@ class Borrowing < ApplicationRecord
 
   enum status: {pending: 0, accept: 1, cancel: 2, payed: 3}
 
-  before_save :save_borrow_code
+  before_create :save_borrow_code
   after_update :return_quantity
+
+  def return_quantity
+    return unless payed? || cancel?
+
+    return_book
+  end
+
+  def accept_borrowing
+    update(
+      date_borrow: updated_at,
+      date_pay: updated_at + Settings.date.day
+    )
+    BorrowingMailer.new_borrowing(self).deliver_later
+  end
+
+  def borrowing_cancel
+    BorrowingMailer.cancel_borrowing(self).deliver_later
+  end
 
   private
 
-  def return_quantity
-    return unless payed?
-
+  def return_book
     borrow_items.each do |borrow_item|
       borrow_item.book.update_attribute(
         :quantity_borrowed,

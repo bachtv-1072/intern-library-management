@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    <%= page_index params[:page], borrowing_counter,
+      Settings.panigate.category %>
+    </td>
+  <td>
+    <%= link_to "#" , data: { toggle: "modal", target: "#borrowing-#{borrowing.id}"} do %>
+      <%= borrowing.borrow_code %>
+    <% end %>
+    <%= render "admin/borrowings/borrowing", borrowing: borrowing %>
+  </td>
+  <td><%= borrowing.books.size %></td>
+  <td>
+    <span class="badge badge-pill badge-secondary">
+      <%= borrowing.status %>
+    </span>
+  </td>
+  <td>
+    <%= borrowing.date_pay.strftime Settings.convert_date if borrowing.date_pay.present? %>
+  </td>
+</tr>

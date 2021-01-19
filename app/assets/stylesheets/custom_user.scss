@@ -1,4 +1,27 @@
-#view-for-user{
+#view-for-user {
+  .formSearch {
+    .form-control {
+      background-color: rgba(255,255,255,0.2);
+      border-top: none;
+      border-right: none;
+      border-left: none;
+    }
+
+    .input-group-append {
+      display: none;
+    }
+  }
+
+  .td-index-counter-book {
+    width: 40px;
+  }
+
+  #customImgae {
+    img {
+      max-width: 30% !important;
+    }
+  }
+
 * {
   box-sizing: border-box;
 }
