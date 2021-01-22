@@ -1,6 +1,8 @@
 class BorrowItem < ApplicationRecord
   BORROWITEM_PARAMS = [:book_id].freeze
 
+  acts_as_paranoid
+
   belongs_to :book
   belongs_to :borrowing, optional: true
 
