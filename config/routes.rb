@@ -10,7 +10,7 @@ Rails.application.routes.draw do
         resources :books, except: %i(new create)
       end
       resources :authors
-      resources :borrowings, only: :update
+      resources :borrowings, only: %i(update destroy)
     end
     resources :books, only: :show
     resources :borrow_items, only: %i(create index destroy)

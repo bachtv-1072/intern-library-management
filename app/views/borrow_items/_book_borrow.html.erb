@@ -4,7 +4,7 @@
       Settings.panigate.category %>
   </td>
   <% book_borrow.images.each do |image| %>
-    <td class="product-thumbnail">
+    <td class="product-thumbnail" id="customImgae">
       <%= link_to book_path book_borrow do %>
         <%= image_tag image.link_url if image.present? %>
       <% end %>

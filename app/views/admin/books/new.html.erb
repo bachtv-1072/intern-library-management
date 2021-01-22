@@ -18,17 +18,18 @@
                 <div class="col-md-6">
                   <div class= "valueColumn">
                     <div class="form-group">
-                      <%= f.label :name %>
+                      <%= render "shared/error_message", object: f.object %>
+                      <%= f.label :name, t(".name") %>
                       <%= f.text_field :name, class:"form-control" ,
                         placeholder: t("books.new.name") %>
                     </div>
                     <div class="form-group">
-                      <%= f.label :description %>
+                      <%= f.label :description, t(".des") %>
                       <%= f.text_area :description, class:"form-control",
                         placeholder: t("books.new..descripton") %>
                     </div>
                     <div class="form-group">
-                      <%= f.label :quantity %>
+                      <%= f.label :quantity, t(".quan") %>
                       <%= f.number_field :quantity, class:"form-control",
                         in: 1..99, step:1, placeholder: t("books.new.quantity") %>
                     </div>
@@ -39,19 +40,19 @@
                     <div class="form-group">
                       <%= f.label :category_id, t(".category") %>
                       <%= f.select :category_id,
-                        Category.all.pluck(:title, :id),
+                        Category.all.pluck(:title, :id), {},
                         class:"custom-select" %>
                     </div>
                     <div class="form-group">
                       <%= f.label :publisher_id, t(".publisher") %>
                       <%= f.select :publisher_id,
-                        Publisher.all.pluck(:name, :id),
+                        Publisher.all.pluck(:name, :id), {},
                         class:"custom-select" %>
                     </div>
                     <div class="form-group">
                       <%= f.label :author_id, t(".author") %>
                       <%= f.select :author_id,
-                        Author.all.pluck(:name, :id),
+                        Author.all.pluck(:name, :id), {},
                         class:"custom-select" %>
                     </div>
                     <div class="form-group">

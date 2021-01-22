@@ -31,22 +31,14 @@
                 <th><%= t "borrowings.paying.code" %></th>
                 <th><%= t "borrowings.paying.name" %></th>
                 <th><%= t "borrowings.paying.time" %></th>
+                <th><%= t "borrowings.paying.date" %></th>
                 <th><%= t "borrowings.paying.status" %></th>
+                <th><%= t "borrowings.paying.action" %></th>
               </tr>
             </thead>
             <tbody>
-              <% Borrowing.accept.each_with_index do |br, index| %>
-                <tr>
-                  <td><%= index + Settings.number %></td>
-                  <td><%= br.borrow_code %></td>
-                  <td><%= br.user_name %></td>
-                  <td><%= br.updated_at.strftime Settings.convert_date %></td>
-                  <td class="updateBorrowing">
-                    <%= link_to admin_borrowing_path(br), method: :patch, remote: true do %>
-                      <span class="badge badge-pill badge-warning"><%= t "borrowings.paying.pay" %></span>
-                    <% end %>
-                  </td>
-                </tr>
+              <% Borrowing.accept.each_with_index do |borrowing, index| %>
+                <%= render "paying", borrowing: borrowing, index: index %>
               <% end %>
             </tbody>
           </table>

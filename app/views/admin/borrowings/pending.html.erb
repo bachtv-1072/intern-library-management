@@ -32,19 +32,35 @@
                 <th><%= t "borrowings.pending.name" %></th>
                 <th><%= t "borrowings.pending.time" %></th>
                 <th><%= t "borrowings.pending.status" %></th>
+                <th><%= t "borrowings.paying.action" %></th>
               </tr>
             </thead>
             <tbody>
-              <% Borrowing.pending.each_with_index do |br, index| %>
+              <% Borrowing.pending.each_with_index do |borrowing, index| %>
                 <tr>
                   <td><%= index + Settings.number %></td>
-                  <td><%= br.borrow_code %></td>
-                  <td><%= br.user_name %></td>
-                  <td><%= time_ago_in_words br.created_at %></td>
+                  <td><%= borrowing.borrow_code %></td>
+                  <td><%= borrowing.user_name %></td>
+                  <td><%= time_ago_in_words borrowing.created_at %></td>
                   <td class="updateBorrowing">
-                    <%= link_to admin_borrowing_path(br), method: :patch, remote: true do %>
+                    <%= link_to admin_borrowing_path(borrowing), method: :patch,
+                      data: { confirm: "#{t "borrowings.paying.confirm" }" } ,remote: true do %>
                       <span class="badge badge-pill badge-warning">
                         <%= t "borrowings.pending.pend" %>
+                      </span>
+                    <% end %>
+                  </td>
+                  <td class="deleteBorrowing">
+                    <%= link_to "#" , data: { toggle: "modal", target: "#borrowing-#{borrowing.id}" } do %>
+                      <span class="badge rounded-pill bg-success">
+                        <i class="fas fa-eye"></i>
+                      </span>
+                    <% end %>
+                    <%= render "borrowing", borrowing: borrowing %>
+                    <%= link_to admin_borrowing_path(borrowing), method: :delete,
+                      remote: true, data: { confirm: "#{t "borrowings.paying.confirm"}" } do %>
+                      <span class="badge rounded-pill bg-danger">
+                        <i class="fas fa-trash-alt"></i>
                       </span>
                     <% end %>
                   </td>

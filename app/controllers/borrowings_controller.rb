@@ -1,11 +1,16 @@
 class BorrowingsController < ApplicationController
   before_action :require_login, only: :create
 
+  def index
+    @borrowings = current_user.borrowings.page(params[:page]).per(
+      Settings.panigate.category
+    )
+  end
+
   def create
     @borrowing = current_user.borrowings.build borrowing_params
     return unless @borrowing.save
 
-    BorrowingMailer.with(borrowing: @borrowing).new_borrowing.deliver_later
     session[:borrow_item] = nil
     flash[:success] = t "borrow_items.create.message"
     redirect_to root_path

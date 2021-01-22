@@ -1,5 +1,26 @@
 vi:
   layouts:
+    footer:
+      content: Hiện nay chúng ta đang ba hoa về sự cô đơn toàn cầu của nhân loại.
+        Làm thế nào để vượt qua điều đó? Chỉ có đọc sách! Chỉ cuốn sách mới
+        "trò chuyện" với con người không mang tính chất hình thức, mà là một cách tâm tình,
+        khuyên bảo và cung cấp những định hướng cần thiết.
+        Trong sách có những bí mật của đạo đức - quy tắc của lương tâm
+      trending: Xu hướng
+      best_Seller: Cuốn sách hay
+    header:
+      home: Trang chủ
+      contact: Khác
+      book: Sách
+      cate: Thể loại
+      author: Tác giả
+      publisher: Nhà xuất bản
+      acc: Tài khoản
+      acc_detail: Chi tiết tài khoản
+      set: Cập nhập tài khoản
+      logout: Đăng xuất
+      borr: Phiếu mượn
+      list: Danh sách phiếu mượn
     admin:
       sidebar:
         logo: Quản lý thư viện
@@ -13,9 +34,6 @@ vi:
         new: Mới
         append: Chấp nhận
         paying: Đang mượn
-      header:
-        home: Trang chủ
-        contact: Khác
   sessions:
     new:
       or: HOẶC
@@ -57,6 +75,7 @@ vi:
       submit: Tạo nội dung
       quatity: Chất lượng
       sold: Tạm thời sách được mượn hết
+      quantity: Số lượng
     array: Danh sách các cuốn sách
     list:
       column_id: STT
@@ -118,20 +137,30 @@ vi:
     message_error: Không được mượn 2 cuốn sách giống nhau
     message_success: Mượn thành công
     create:
-      message: Mượn thành công, mời bạn kiểm tra mail
+      message: Yêu cầu mượn sách sẽ được sử lý trong ít phút
     index:
+      home: Trang chủ
       borrow: Mượn
     destroy:
       fail: Xoá thất bại
       succsess: Xoá thành công
   borrowings:
+    destroy:
+      success: Xoá thành công
+      fail: Xoá thất bại
     index:
+      borrow: Danh sách phiếu mượn của bạn
       borrowing: Danh sách cuốn sách mượn
       home: Trang chủ
       id: STT
+      quatity: Số lượng
       book: Cuốn sách
       name: Tên sách
       action: Xoá
+      code: Mã phiếu
+      status: Trạng thái
+      date_pay: Thời gian trả sách
+      detail: Chi tiết phiếu mượn
     paying:
       home: Trang chủ
       content_1: Danh sách cuốn phiếu trạng thái đang mượn
@@ -142,6 +171,9 @@ vi:
       time: Ngày mượn
       status: Trạng thái
       pay: Đang mượn
+      date: Ngày trả
+      action: Hoạt động
+      confirm: Bạn có chắc không?
     pending:
       content_1: Danh sách cuốn phiếu trạng thái đang chờ mượn
       home: Trang chủ
@@ -154,7 +186,7 @@ vi:
       pend: Xác nhận
   require_login: Bạn cần phải đăng nhập
   mailer:
-    title: Bạn có một đơn mượn sách mới!
+    title: Bạn có một tin nhắn mới!
   borrowing_mailer:
     dear: Thân
     text: Bạn có một phiế mượn sách mới ở Thư Viện
@@ -162,3 +194,17 @@ vi:
     text_1: Số lượng cuốn sách bạn đang mượn là
     text_2: Đó là
     text_3: Xin cảm ơn!
+    cancel: Phiếu mượn của bạn đã bị huỷ, hay không được Admin duyệt
+  shared:
+    error:
+      title: Có tất cả là
+      name: lỗi
+  admin:
+    books:
+      new:
+        name: Tên cuốn sách *
+        des: Mô tả *
+        quan: Số lượng *
+        category: Thể loại
+        publisher: Nhà xuất bản
+        author: Tác giả

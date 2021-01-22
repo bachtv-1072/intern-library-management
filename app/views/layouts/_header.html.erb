@@ -14,60 +14,66 @@
             <li class="drop with--one--item">
               <%= link_to t("books.show.title_1"), root_path %>
             </li>
-            <li class="drop"><a href="#"></a>
+            <li class="drop">
+              <%= link_to t(".book"), "#" %>
               <div class="megamenu mega03">
                 <ul class="item item03">
-                  <li class="title"></li>
+                  <li class="title"><%= t ".cate" %></li>
                 </ul>
                 <ul class="item item03">
-                  <li class="title"></li>
+                  <li class="title"><%= t ".author" %></li>
+                </ul>
+                <ul class="item item03">
+                  <li class="title"><%= t ".publisher" %></li>
                 </ul>
               </div>
             </li>
-            <li class="drop"><a href="#"></a>
-              <div class="megamenu mega03">
-                <ul class="item item03">
-                  <li class="title"></li>
-                </ul>
-                <ul class="item item03">
-                  <li class="title"></li>
-                </ul>
-                <ul class="item item03">
-                  <li class="title"></li>
-                </ul>
+            <% if logged_in? %>
+              <li class="drop">
+                <%= link_to t(".acc"), "#" %>
+                <div class="megamenu mega02">
+                  <ul class="item item02">
+                    <li class="title"><%= t ".acc_detail" %></li>
+                    <li><a href="shop-grid.html"><%= t ".set" %></a></li>
+                    <li>
+                      <%= link_to t(".logout"), logout_path, method: :delete %>
+                    </li>
+                  </ul>
+                  <ul class="item item03">
+                    <li class="title"><%= t ".borr" %></li>
+                    <li>
+                      <%= link_to t(".list"), borrowings_path %>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            <% end %>
+            <li class="formSearch">
+              <div class="input-group mb-3">
+                <%= form_tag "/search", class: "form-inline", method: :get do %>
+                  <%= text_field_tag :name, params[:name], class: "form-control mr-sm-2"%>
+                  <div class="input-group-append">
+                     <%= submit_tag "Search", class: "btn btn-outline-secondary" %>
+                  </div>
+                <% end %>
               </div>
             </li>
-            <li class="drop"><a href="#"></a>
-              <div class="megamenu mega02">
-                <ul class="item item02">
-                  <li class="title"></li>
-                </ul>
-                <ul class="item item02">
-                  <li class="title"></li>
-                </ul>
-              </div>
-            </li>
-            <li class="drop"><a href="#"></a>
-            </li>
-            <li class="drop"><a href="#"></a>
-            </li>
-            <li><a href="#"></a></li>
           </ul>
-        </nav>
+      </nav>
       </div>
       <div class="col-md-6 col-sm-6 col-6 col-lg-2">
         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-          <li class="shop_search"><a class="search__active" href="#"></a></li>
           <li class="wishlist"><a href="#"></a></li>
           <li class="shopcart" id="borrowingsSize">
             <%= link_to borrow_items_path , class:"cartbox_active" do %>
-              <span class="product_qun"><%= session[:borrow_item] ? session[:borrow_item].length : 0 %></span>
+              <span class="product_qun"><%= session[:borrow_item] ? session[:borrow_item].length : Settings.quantity %></span>
             <% end %>
           </li>
-          <li class="nav-item dropdown setting__bar__icon">
-            <a class="nav-link dropdown-toggle setting__active" href="#" id="navbardrop" data-toggle="dropdown">
-            </a>
-          </li>
+          <% unless logged_in? %>
+            <li class="nav-item dropdown setting__bar__icon">
+              <%= link_to "", login_path ,class: "nav-link dropdown-toggle setting__active" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

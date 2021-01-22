@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  layout "layouts/authentication/application"
+
   def new; end
 
   def create
