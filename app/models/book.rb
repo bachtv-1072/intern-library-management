@@ -17,6 +17,8 @@ class Book < ApplicationRecord
   has_many :borrow_items, dependent: :destroy
   has_many :borrowings, through: :borrow_items
   has_many :comments, dependent: :destroy
+  has_many :ratings, dependent: :destroy
+
   accepts_nested_attributes_for :images, reject_if: :all_blank,
     allow_destroy: true
 
@@ -27,7 +29,8 @@ class Book < ApplicationRecord
   validates :quantity, presence: true,
     numericality:
     {less_than_or_equal_to: Settings.book.quantity.length, only_integer: true}
-  validates :quantity_borrowed, numericality: {only_integer: true}
+  validates :quantity_borrowed, numericality: {only_integer: true},
+    allow_nil: true
 
   delegate :title, to: :category, prefix: true, allow_nil: true
 

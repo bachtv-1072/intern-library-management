@@ -12,5 +12,6 @@ class BooksController < ApplicationController
     @borrow_item = @book.borrow_items.build
     @comment = Comment.new
     @comments = @book.comments
+    @rating = Rating.new
   end
 end

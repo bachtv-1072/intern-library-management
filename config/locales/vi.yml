@@ -62,6 +62,8 @@ vi:
     index: Tạo cuốn sách
     comment:
       review: Đánh giá bởi
+    form_rating:
+      title: Xếp hạng
     new:
       name: Nhập tên cuốn sách
       descripton: Thêm mô tả cho cuốn sách
@@ -221,6 +223,10 @@ vi:
     create:
       message: Tạo thành công
       fail: Tạo thất bại, thiếu nội dung
+  ratings:
+    create:
+      success: Đánh giá thành công
+      fail: Bạn đã đánh giá cho cuốn sách
   admin:
     books:
       new:

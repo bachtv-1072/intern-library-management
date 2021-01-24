@@ -17,4 +17,16 @@ module ApplicationHelper
   def options_publisher
     Publisher.pluck :name, :id
   end
+
+  def average_rating ratings
+    if ratings.present?
+      (ratings.sum(&:point).to_f / ratings.size).round Settings.rouding
+    else
+      Settings.quantity
+    end
+  end
+
+  def options_for_select_rating
+    (1..5).map{|i| [i, i]}
+  end
 end

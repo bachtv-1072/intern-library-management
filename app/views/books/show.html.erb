@@ -35,6 +35,7 @@
                 <div class="product-reviews-summary d-flex">
                   <ul class="rating-summary d-flex">
                     <li>
+                      <%= render "form_rating" %>
                     </li>
                   </ul>
                 </div>
@@ -60,6 +61,9 @@
                     <% end %>
                   </div>
                 </div>
+                <span id="totalRating">
+                  <%= render "rating" %>
+                </span>
                 <div class="product_meta">
                   <span class="posted_in"><%= t ".category" %>:
                     <%= link_to @book.category_title, "#" %>

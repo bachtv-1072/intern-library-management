@@ -1,0 +1,6 @@
+<%= form_for [@book, @rating], id: "autoSubmit" do |f| %>
+  <%= t ".title" %>: <%= f.select :point, options_for_select_rating,
+    id:"valueColum" %>
+    <i class="fas fa-star" id="star"></i>
+    <%= f.hidden_field :book_id, value: @book.id, class:"bookValue" %>
+<% end %>
