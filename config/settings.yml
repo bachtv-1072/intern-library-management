@@ -30,3 +30,5 @@ number: 1
 convert_date: "%m/%d/%Y"
 date: 7
 quantity: 0
+rouding: 1
+point: 5

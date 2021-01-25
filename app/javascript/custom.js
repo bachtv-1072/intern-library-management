@@ -20,6 +20,7 @@ $(window).on('turbolinks:load', function() {
       'bPaginate': false
     });
 
+    const current_book_url = document.URL;
     const ORIGIN_PATH = window.location.origin;
     $('#ajax_filter').change(function (){
       var id = parseInt($('.shot__byselect').val());
@@ -36,6 +37,20 @@ $(window).on('turbolinks:load', function() {
         },
         error: function(XMLHttpRequest, errorTextStatus, error){
           alert('Failed: '+ errorTextStatus+' ;'+error);
+        }
+      });
+    });
+
+    $('#rating_point').change(function() {
+      var point = parseInt($(this).val());
+      var book_id = parseInt($('.bookValue').val());
+      let url_post =  current_book_url + '/ratings';
+      $.ajax({
+        method: 'POST',
+        dataType: 'script',
+        url: url_post,
+        data: {
+          rating: {point: point, book_id: book_id}
         }
       });
     });

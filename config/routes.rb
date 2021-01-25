@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
     resources :books, only: %i(index show) do
       resources :comments, only: %i(create destroy)
+      resources :ratings, only: :create
     end
     resources :borrow_items, only: %i(create index destroy)
     resources :borrowings, only: %i(index create)
