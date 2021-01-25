@@ -59,6 +59,7 @@ vi:
     forgot: Quên tài khoản
     remember: Nhớ tài khoản
   books:
+    book:
     index: Tạo cuốn sách
     comment:
       review: Đánh giá bởi
@@ -85,7 +86,7 @@ vi:
       share: Chia sẻ
       button_borrow: Mượn
       detail: Chi tiết
-      review: Phê duyệt
+      review: Bình luận
       reviewing: Bạn đang phê duyệt cuốn
       reviewer: Khách hàng phê duyệt
       review_content: Nội dung phê duyệt
@@ -97,7 +98,8 @@ vi:
     list:
       column_id: STT
       column_name: Tên
-      column_quantity: Số lượng
+      column_quantity: Tổng số lượng ban đầu
+      column_quantity_last: Số lượng hiện tại
       column_action: Hành động
   categories:
     placeholder: Nhập...
@@ -153,6 +155,8 @@ vi:
   borrow_items:
     message_error: Không được mượn 2 cuốn sách giống nhau
     message_success: Mượn thành công
+    book_borrow:
+      confirm: Bạn có chắc không?
     create:
       message: Yêu cầu mượn sách sẽ được sử lý trong ít phút
     index:
@@ -191,16 +195,6 @@ vi:
       date: Ngày trả
       action: Hoạt động
       confirm: Bạn có chắc không?
-    pending:
-      content_1: Danh sách cuốn phiếu trạng thái đang chờ mượn
-      home: Trang chủ
-      pedd: Chờ
-      id: STT
-      code: Mã mượn
-      name: Tên người mượn
-      time: Thời gian gửi lời mời chấp nhận
-      status: Trạng thái
-      pend: Xác nhận
   require_login: Bạn cần phải đăng nhập
   mailer:
     title: Bạn có một tin nhắn mới!
@@ -228,7 +222,22 @@ vi:
       success: Đánh giá thành công
       fail: Bạn đã đánh giá cho cuốn sách
   admin:
+    borrowings:
+      borrowing:
+        pending: Đang chờ xử lý
+        accept: Đang mượn
+        payed: Đã trả
+        cancel: Huỷ
+        title_1: Chấp nhận
+        title_2: Trả sách
+      update:
+        message: Cập nhập thành công
+      book_accept:
+        date_borrow: Ngày mượn
+        date_pay: Ngày trả 
     books:
+      book_detail:
+        title: Chi tiết cuốn sách
       new:
         name: Tên cuốn sách *
         des: Mô tả *
@@ -236,3 +245,12 @@ vi:
         category: Thể loại
         publisher: Nhà xuất bản
         author: Tác giả
+    adminpages:
+      home:
+        title: Trang chủ
+        info_1: Thành viên
+        info_2: Phiếu mượn
+        info_3: Sách
+        info_4: Lượt đánh giá
+  share:
+    sold: Hết

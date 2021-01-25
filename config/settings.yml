@@ -17,6 +17,7 @@ book:
 panigate:
   category: 5
   book: 6
+  borrowing: 10
 author:
   length:
     name: 50
@@ -32,3 +33,8 @@ date: 7
 quantity: 0
 rouding: 1
 point: 5
+status:
+  zero: 0
+  one: 1
+  three: 3
+  two: 2

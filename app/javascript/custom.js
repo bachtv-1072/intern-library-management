@@ -54,5 +54,20 @@ $(window).on('turbolinks:load', function() {
         }
       });
     });
+
+    $('.btn-add-to-cart2').unbind().click(function (){
+      var book_id = parseInt($(this).data('id'));
+      let url_borrow_items =  ORIGIN_PATH + '/borrow_items';
+      $.ajax({
+        method: 'POST',
+        dataType: 'script',
+        url: url_borrow_items,
+        data: {
+          borrow_item: {
+            book_id: book_id
+          }
+        }
+      });
+    });
   });
 })

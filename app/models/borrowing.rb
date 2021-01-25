@@ -17,6 +17,8 @@ class Borrowing < ApplicationRecord
   before_create :save_borrow_code
   after_update :return_quantity
 
+  scope :order_borrowing, ->{order(:status)}
+
   def return_quantity
     return unless payed? || cancel?
 

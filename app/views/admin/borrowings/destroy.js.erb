@@ -1,8 +1,11 @@
 <% if @success %>
   toastr.warning('<%= t 'borrowings.destroy.success' %>')
-  $('.deleteBorrowing').bind('ajax:success', function() {
+  $('.delete_borrrowing').bind('ajax:success', function() {
     $(this).closest('tr').fadeOut(100);
   })
+  setTimeout(function(){
+    $( "#manage_borrowing" ).load( "<%= admin_borrowings_path %> #manage_borrowing" );
+  }, 2000);
 <% else %>
   toastr.error('<%= t 'borrowings.destroy.fail' %>')
 <% end %>

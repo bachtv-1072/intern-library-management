@@ -3,7 +3,7 @@
     <aside class="wedget__categories poroduct--cat">
       <h3 class="wedget__title"><%= t ".cate" %></h3>
       <ul>
-        <% @categories.each do |category| %>
+        <% Category.all.each do |category| %>
           <%= link_to "#" do %>
             <%= category.title %><span>(<%= category.books.size %>)</span>
           <% end  %>
@@ -14,7 +14,7 @@
     <aside class="wedget__categories poroduct--tag">
       <h3 class="wedget__title"><%= t ".author" %></h3>
       <ul>
-        <% @authors.each do |author| %>
+        <% Author.all.each do |author| %>
           <li>
             <%= link_to author.name, "#" %>
           </li>

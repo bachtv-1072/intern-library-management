@@ -1,0 +1,21 @@
+<div class="modal fade" id="book-<%= book.id%>">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= t ".title" %></h4>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="list_imgae_book">
+          <div class="row">
+            <% book.images.each do |image| %>
+              <%= render "list_images", image: image %>
+            <% end %>
+          </div>
+        <div>
+      </div>
+    </div>
+  </div>
+</div>

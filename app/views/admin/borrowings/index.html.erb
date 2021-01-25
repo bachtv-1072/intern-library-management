@@ -24,24 +24,21 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <table id="example2" class="table table-bordered table-hover">
+          <table id="manage_borrowing" class="table table-bordered table-hover">
             <thead>
               <tr>
                 <th><%= t "borrowings.paying.id" %></th>
                 <th><%= t "borrowings.paying.code" %></th>
                 <th><%= t "borrowings.paying.name" %></th>
-                <th><%= t "borrowings.paying.time" %></th>
-                <th><%= t "borrowings.paying.date" %></th>
                 <th><%= t "borrowings.paying.status" %></th>
                 <th><%= t "borrowings.paying.action" %></th>
               </tr>
             </thead>
             <tbody>
-              <% Borrowing.accept.each_with_index do |borrowing, index| %>
-                <%= render "paying", borrowing: borrowing, index: index %>
-              <% end %>
+              <%= render partial: "borrowing", collection: @borrowings %>
             </tbody>
           </table>
+          <%= paginate @borrowings, theme: "twitter-bootstrap-4" %>
         </div>
       </div>
     </div>
