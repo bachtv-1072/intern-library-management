@@ -19,6 +19,8 @@ class User < ApplicationRecord
 
   enum role: {user: 0, admin: 1}
 
+  acts_as_paranoid
+
   before_save :downcase_email
 
   has_secure_password

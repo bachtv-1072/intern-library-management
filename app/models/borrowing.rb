@@ -2,6 +2,8 @@ class Borrowing < ApplicationRecord
   BORROWING_PARAMS = [borrow_items_attributes:
     BorrowItem::BORROWITEM_PARAMS].freeze
 
+  acts_as_paranoid
+
   has_many :borrow_items, dependent: :destroy
   has_many :books, through: :borrow_items
   belongs_to :user, optional: true

@@ -7,6 +7,8 @@ class Book < ApplicationRecord
     :author_id,
     images_attributes: Image::IMAGE_PARAMS].freeze
 
+  acts_as_paranoid
+
   belongs_to :category, optional: true
   belongs_to :publisher, optional: true
   belongs_to :authors, optional: true

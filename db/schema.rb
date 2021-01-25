@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_171625) do
+ActiveRecord::Schema.define(version: 2021_01_22_071308) do
+
+  create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body", size: :long
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +71,8 @@ ActiveRecord::Schema.define(version: 2021_01_13_171625) do
     t.integer "publisher_id", null: false
     t.integer "author_id", null: false
     t.integer "quantity_borrowed"
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_books_on_deleted_at"
   end
 
   create_table "borrow_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
@@ -69,8 +81,10 @@ ActiveRecord::Schema.define(version: 2021_01_13_171625) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.datetime "deleted_at"
     t.index ["book_id"], name: "index_borrow_items_on_book_id"
     t.index ["borrowing_id"], name: "index_borrow_items_on_borrowing_id"
+    t.index ["deleted_at"], name: "index_borrow_items_on_deleted_at"
   end
 
   create_table "borrowing_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
@@ -90,7 +104,9 @@ ActiveRecord::Schema.define(version: 2021_01_13_171625) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "borrow_code"
+    t.datetime "deleted_at"
     t.index ["date_borrow"], name: "index_borrowings_on_date_borrow"
+    t.index ["deleted_at"], name: "index_borrowings_on_deleted_at"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
@@ -99,10 +115,21 @@ ActiveRecord::Schema.define(version: 2021_01_13_171625) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.string "data_fingerprint"
+    t.string "type", limit: 30
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "content"
-    t.integer "book_id", null: false
-    t.integer "user_id", null: false
+    t.integer "book_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -122,8 +149,8 @@ ActiveRecord::Schema.define(version: 2021_01_13_171625) do
 
   create_table "ratings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "point"
-    t.integer "book_id", null: false
-    t.integer "user_id", null: false
+    t.integer "book_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -137,6 +164,8 @@ ActiveRecord::Schema.define(version: 2021_01_13_171625) do
     t.integer "role", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
