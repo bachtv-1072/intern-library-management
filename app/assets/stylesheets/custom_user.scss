@@ -803,13 +803,13 @@ a#scrollUp {
   background-position: center center;
 }
 .bg-image--6 {
-  background-image: url(images/bg/6.jpg);
+  background-image: url("6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 .bg-image--7 {
-  background-image: url(images/bg/7.jpg);
+  background-image: url("6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -7479,7 +7479,6 @@ a.checkout__title {
       }
       li.wishlist {
         a {
-          background: white url("images/icons/wishlist.png") no-repeat scroll -6% 0;
           &:hover {
             background-position: 108% 0;
             border: 2px solid #e59285;
@@ -7489,7 +7488,6 @@ a.checkout__title {
       }
       li.compare {
         a {
-          background: white url("images/icons/compare.png") no-repeat scroll -6% 0;
           &:hover {
             background-position: 108% 0;
             border: 2px solid #e59285;

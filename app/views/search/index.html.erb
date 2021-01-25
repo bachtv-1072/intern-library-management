@@ -1,0 +1,5 @@
+<% if @books.present? %>
+  <%= render partial: "layouts/list_books/book", collection: @books %>
+<% else %>
+  <h4><%= t ".not_found" %></h4>
+<% end %>

@@ -16,6 +16,7 @@ book:
     length: 100
 panigate:
   category: 5
+  book: 6
 author:
   length:
     name: 50
