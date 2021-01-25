@@ -17,6 +17,7 @@ book:
 panigate:
   category: 5
   book: 6
+  borrowing: 10
 author:
   length:
     name: 50

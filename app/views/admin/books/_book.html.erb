@@ -5,8 +5,9 @@
   </td>
   <td><%= book.name %></td>
   <td><%= book.quantity %></td>
+  <td><%= book.quantity_borrowed %></td>
   <td>
-    <%= link_to "#" do %>
+    <%= link_to "#", data: { toggle: "modal", target: "#book-#{book.id}" } do %>
       <span class="badge rounded-pill bg-info text-dark">
         <i class="fas fa-eye"></i>
       </span>
@@ -21,5 +22,6 @@
         <i class="fas fa-trash-alt"></i>
       </span>
     <% end %>
+    <%= render "book_detail", book: book %>
   </td>
 </tr>

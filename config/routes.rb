@@ -5,12 +5,12 @@ Rails.application.routes.draw do
       root "adminpages#home"
       resources :users, only: %i(index destroy)
       resources :publishers
-      resources :books, only: %i(index new create)
+      resources :books, only: %i(index new create destroy)
       resources :categories do
         resources :books, except: %i(new create)
       end
       resources :authors
-      resources :borrowings, only: %i(update destroy)
+      resources :borrowings, only: %i(index update destroy)
     end
     resources :books, only: %i(index show) do
       resources :comments, only: %i(create destroy)
@@ -25,8 +25,6 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    get "/list_append", to: "admin/borrowings#pending"
-    get "/list_paying", to: "admin/borrowings#paying"
     get "/search", to: "search#index"
   end
 end
