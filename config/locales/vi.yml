@@ -208,3 +208,10 @@ vi:
         category: Thể loại
         publisher: Nhà xuất bản
         author: Tác giả
+    adminpages:
+      home:
+        title: Trang chủ
+        info_1: Thành viên
+        info_2: Phiếu mượn
+        info_3: Sách
+        info_4: Lượt đánh giá
