@@ -1,6 +1,7 @@
 class Borrowing < ApplicationRecord
   BORROWING_PARAMS = [borrow_items_attributes:
     BorrowItem::BORROWITEM_PARAMS].freeze
+  CSV_ATTRIBUTES = %w(date_borrow date_pay borrow_code).freeze
 
   acts_as_paranoid
 

@@ -28,5 +28,6 @@ Rails.application.routes.draw do
     get "/list_append", to: "admin/borrowings#pending"
     get "/list_paying", to: "admin/borrowings#paying"
     get "/search", to: "search#index"
+    get "export_csv", to: "admin/export_borrowings#index"
   end
 end
