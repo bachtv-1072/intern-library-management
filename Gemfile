@@ -39,6 +39,12 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "simplecov-rcov"
+  gem "simplecov"
+  gem "faker"
+  gem "database_cleaner"
+  gem "factory_bot_rails"
+  gem "shoulda-matchers"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
