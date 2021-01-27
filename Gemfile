@@ -28,8 +28,7 @@ group :development, :test do
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
-  gem "simplecov-rcov"
-  gem "simplecov"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -43,6 +42,11 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "simplecov-rcov"
+  gem "simplecov"
+  gem "faker"
+  gem "database_cleaner"
+  gem "shoulda-matchers"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
