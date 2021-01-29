@@ -28,19 +28,6 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_mailer.delivery_method = :smtp
-  host = ENV["host"]
-  config.action_mailer.default_url_options = { host: host, protocol: "http" }
-  config.action_mailer.smtp_settings = {
-    address: ENV["address"],
-    port: ENV["port"],
-    authentication: :plain,
-    user_name: ENV["user_name"],
-    password: ENV["password"],
-    domain: ENV["domain"],
-    enable_starttls_auto: true
-  }
-
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
@@ -72,4 +59,14 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name: ENV["user_name"],
+    password: ENV["password"],
+    address: ENV["address"],
+    domain: ENV["domain"],
+    port: ENV["port"],
+    authentication: :cram_md5
+  }
 end
