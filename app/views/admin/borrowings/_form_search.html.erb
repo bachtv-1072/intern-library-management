@@ -1,0 +1,7 @@
+<form class="f" action="/borrowings">
+  <input type="email" class="form-control mb-2 mr-sm-2" placeholder="Enter email" id="email">
+  <input type="password" class="form-control mb-2 mr-sm-2" placeholder="Enter password" id="pwd">
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+<%= form_for admin_borrowings_path, class: "orm-inline" do |f| %>
+

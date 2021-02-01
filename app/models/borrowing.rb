@@ -18,6 +18,15 @@ class Borrowing < ApplicationRecord
   after_update :return_quantity
 
   scope :order_borrowing, ->{order(:status)}
+  scope :by_borrow_code, (lambda do |borrow_code|
+    where "borrow_code LIKE ?", "%#{borrow_code}%" if borrow_code.present?
+  end)
+  scope :by_date_start, (lambda do |date_start|
+    where "date_pay = ?", date_pay if date_pay.present?
+  end)
+  scope :by_user, (lambda do |user_id|
+    where(user_id: user_id) if user_id.present?
+  end)
 
   def return_quantity
     return unless payed? || cancel?
