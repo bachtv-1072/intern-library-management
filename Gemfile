@@ -20,6 +20,8 @@ gem "rails", "~> 6.0.3", ">= 6.0.3.4"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 gem "paranoia", "~> 2.2"
+gem "figaro"
+
 group :development, :test do
   gem "pry-rails"
   gem "rspec-rails", "~> 4.0.1"
