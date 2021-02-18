@@ -29,6 +29,7 @@ group :development, :test do
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
   gem "factory_bot_rails"
+  gem "rails-controller-testing"
 end
 
 group :development do
