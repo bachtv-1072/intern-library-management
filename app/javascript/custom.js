@@ -69,5 +69,17 @@ $(window).on('turbolinks:load', function() {
         }
       });
     });
+
+    $('.code_value').change(function(){
+      var value = $(this).val();
+      $.ajax({
+        method: 'GET',
+        dataType: 'script',
+        url: current_book_url,
+        data: {
+          q: {borrow_code_eq: value}
+        }
+      });
+    });
   });
 })

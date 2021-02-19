@@ -223,6 +223,16 @@ vi:
       fail: Bạn đã đánh giá cho cuốn sách
   admin:
     borrowings:
+      index:
+        create_at: Thời gian
+      form_search:
+        borrow_code: Mã phiến mượn
+        date_borrow: Khoảng ngày mượn
+        date_pay: Khoảng ngày trả
+        search: Tìm kiếm
+        user_name: Tên người mượn
+        status: Trạng thái
+        all: Tất cả
       borrowing:
         pending: Đang chờ xử lý
         accept: Đang mượn

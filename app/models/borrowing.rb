@@ -19,6 +19,10 @@ class Borrowing < ApplicationRecord
 
   scope :order_borrowing, ->{order(:status)}
 
+  ransacker :created_at do
+    Arel.sql("date(created_at)")
+  end
+
   def return_quantity
     return unless payed?
 
@@ -35,6 +39,16 @@ class Borrowing < ApplicationRecord
 
   def borrowing_cancel
     BorrowingMailer.cancel_borrowing(self).deliver_later
+  end
+
+  class << self
+    def ransackable_attributes auth_object = nil
+      if auth_object == :admin
+        super
+      else
+        %w(borrow_code date_borrow date_pay status)
+      end
+    end
   end
 
   private

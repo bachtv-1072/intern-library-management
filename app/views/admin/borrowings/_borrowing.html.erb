@@ -9,6 +9,9 @@
     <%= status_badges borrowing.status %>
   </td>
   <td>
+    <%= time_ago_in_words borrowing.created_at %>
+  </td>
+  <td>
     <%= borrowing_detail borrowing, "fas fa-eye" %>
     <% if borrowing.pending? || borrowing.cancel? %>
       <%= render "book_pending", borrowing: borrowing %>

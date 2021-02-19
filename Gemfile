@@ -21,6 +21,7 @@ gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 gem "paranoia", "~> 2.2"
 gem "figaro"
+gem "ransack"
 
 group :development, :test do
   gem "pry-rails"
