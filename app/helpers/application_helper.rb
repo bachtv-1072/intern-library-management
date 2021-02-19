@@ -29,4 +29,33 @@ module ApplicationHelper
   def options_for_select_rating
     (1..5).map{|i| [i, i]}
   end
+
+  def status_badges status
+    badges = case status.to_sym
+             when :pending
+               "warning"
+             when :accept
+               "success"
+             when :cancel
+               "danger"
+             else
+               "secondary"
+             end
+    tag.span class: "badge rounded-pill badge-#{badges}" do
+      I18n.t("status.#{status}")
+    end
+  end
+
+  def borrowing_detail borrowing, icon
+    data = if borrowing.pending? || borrowing.cancel?
+             "#borrowing"
+           else
+             "#borrowing_accepted"
+           end
+    link_to "#", data: {toggle: "modal", target: "#{data}-#{borrowing.id}"} do
+      tag.span class: "badge rounded-pill bg-success" do
+        tag.i class: icon.to_sym
+      end
+    end
+  end
 end

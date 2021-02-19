@@ -3,5 +3,7 @@ class SearchController < ApplicationController
 
   def index
     @books = Book.search_by_name params[:name]
+    @categories = Category.all
+    @authors = Author.all
   end
 end

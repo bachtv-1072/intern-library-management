@@ -1,0 +1,18 @@
+<div class="modal fade" id="borrowing-<%= borrowing.id%>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= t "borrowings.index.detail" %></h4>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <% borrowing.books.each_with_index do |book, index| %>
+          <%= index + Settings.number %>. <%= book.name %>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

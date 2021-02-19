@@ -1,6 +1,12 @@
 class Admin::BorrowingsController < Admin::BaseController
   before_action :find_borrowing, only: %i(update destroy)
 
+  def index
+    @borrowings = Borrowing.order_borrowing.page(params[:page]).per(
+      Settings.panigate.borrowing
+    )
+  end
+
   def update
     if @borrowing.pending?
       @borrowing.accept_borrowing

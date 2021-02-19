@@ -1,0 +1,7 @@
+<% if book.quantity_borrowed != Settings.quantity %>
+  <a data-id="<%= book.id %>" class="cart btn-add-to-cart2">
+    <i class="fas fa-shopping-bag"></i>
+  </a>
+<% else %>
+  <%= link_to t("share.sold"), "#", class: "cart", id:"borrow_book" %>
+<% end %>
