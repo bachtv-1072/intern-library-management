@@ -90,4 +90,29 @@ RSpec.describe Borrowing, type: :model do
       expect(borrowing.borrow_code).to be_truthy
     end
   end
+
+  describe "#ransackable_attributes" do
+    context "when auth_object is nil" do
+      subject { Borrowing.ransackable_attributes }
+
+      it { should include "date_borrow" }
+      it { should include "date_pay" }
+      it { should include "status" }
+      it { should include "borrow_code" }
+    end
+
+    context "with auth_object :admin" do
+      subject { Borrowing.ransackable_attributes :admin }
+
+      it { should include "id" }
+      it { should include "date_borrow" }
+      it { should include "date_pay" }
+      it { should include "status" }
+      it { should include "user_id" }
+      it { should include "created_at" }
+      it { should include "updated_at" }
+      it { should include "borrow_code" }
+      it { should include "deleted_at" }
+    end
+  end
 end
