@@ -21,6 +21,10 @@ class User < ApplicationRecord
 
   enum role: {user: 0, admin: 1}
 
+  scope :search_by_user_name, (lambda do |name|
+    where "name LIKE ?", "%#{name}%" if name.present?
+  end)
+
   acts_as_paranoid
 
   before_save :downcase_email
@@ -29,5 +33,13 @@ class User < ApplicationRecord
 
   def downcase_email
     email.downcase!
+  end
+
+  class << self
+    def ransackable_scopes auth_object = nil
+      return unless auth_object == :admin
+
+      [:search_by_user_name]
+    end
   end
 end

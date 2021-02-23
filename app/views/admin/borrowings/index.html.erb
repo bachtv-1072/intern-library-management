@@ -20,25 +20,37 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title"></h3>
+          <%= render "form_search" %>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
           <table id="manage_borrowing" class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th><%= t "borrowings.paying.id" %></th>
+                <th>
+                  <%= sort_link @search,
+                              :id,
+                              t("borrowings.paying.id"),
+                              remote: true %>
+                </th>
                 <th><%= t "borrowings.paying.code" %></th>
                 <th><%= t "borrowings.paying.name" %></th>
                 <th><%= t "borrowings.paying.status" %></th>
+                <th>
+                  <%= sort_link @search,
+                                :created_at,
+                                t(".create_at") %>
+                </th>
                 <th><%= t "borrowings.paying.action" %></th>
               </tr>
             </thead>
-            <tbody>
-              <%= render partial: "borrowing", collection: @borrowings %>
+            <tbody id="result_seacrhing_borrowing">
+              <%= render partial: "borrowing", collection: @borrowings_result %>
             </tbody>
           </table>
-          <%= paginate @borrowings, theme: "twitter-bootstrap-4" %>
+          <div class="paginate">
+            <%= render "paginate" %>
+          </div>
         </div>
       </div>
     </div>

@@ -24,4 +24,8 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t ".require_login"
     redirect_to login_url
   end
+
+  def set_ransack_auth_object
+    current_user&.admin? ? :admin : nil
+  end
 end
