@@ -23,6 +23,9 @@ gem "paranoia", "~> 2.2"
 gem "figaro"
 gem "ransack"
 gem "devise"
+gem "omniauth", "1.9.1"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
 
 group :development, :test do
   gem "pry-rails"

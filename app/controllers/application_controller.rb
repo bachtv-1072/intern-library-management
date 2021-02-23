@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     return if user_signed_in?
 
     flash[:danger] = t ".require_login"
-    redirect_to login_url
+    redirect_to new_user_session_path
   end
 
   def set_ransack_auth_object
