@@ -5,7 +5,7 @@ class Admin::BaseController < ApplicationController
   private
 
   def check_admin
-    return if logged_in? && current_user.admin?
+    return if user_signed_in? && current_user.admin?
 
     redirect_to root_path
   end

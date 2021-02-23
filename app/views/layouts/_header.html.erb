@@ -28,7 +28,7 @@
                 </ul>
               </div>
             </li>
-            <% if logged_in? %>
+            <% if user_signed_in? %>
               <li class="drop">
                 <%= link_to t(".acc"), "#" %>
                 <div class="megamenu mega02">
@@ -36,7 +36,7 @@
                     <li class="title"><%= t ".acc_detail" %></li>
                     <li><a href="shop-grid.html"><%= t ".set" %></a></li>
                     <li>
-                      <%= link_to t(".logout"), logout_path, method: :delete %>
+                      <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
                     </li>
                   </ul>
                   <ul class="item item03">
@@ -69,9 +69,9 @@
               <span class="product_qun"><%= session[:borrow_item] ? session[:borrow_item].length : Settings.quantity %></span>
             <% end %>
           </li>
-          <% unless logged_in? %>
+          <% unless user_signed_in? %>
             <li class="nav-item dropdown setting__bar__icon">
-              <%= link_to "", login_path ,class: "nav-link dropdown-toggle setting__active" %>
+              <%= link_to "", new_user_session_path ,class: "nav-link dropdown-toggle setting__active" %>
             </li>
           <% end %>
         </ul>

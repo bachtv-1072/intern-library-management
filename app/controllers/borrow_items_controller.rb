@@ -32,7 +32,7 @@ class BorrowItemsController < ApplicationController
   private
 
   def action_for_form
-    @args = logged_in? ? current_user.borrowings.build : Borrowing.new
+    @args = user_signed_in? ? current_user.borrowings.build : Borrowing.new
   end
 
   def borrow_item_params

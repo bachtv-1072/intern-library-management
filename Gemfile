@@ -22,6 +22,7 @@ gem "webpacker", "~> 4.0"
 gem "paranoia", "~> 2.2"
 gem "figaro"
 gem "ransack"
+gem "devise"
 
 group :development, :test do
   gem "pry-rails"

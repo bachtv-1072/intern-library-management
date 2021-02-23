@@ -53,9 +53,6 @@ vi:
         email: Tài khoản email
         password: Mật khẩu
       submit: Đăng nhập
-    message:
-      sucsess: Chào mừng bạn đến với thư viện
-      danger: Không thể đăng nhập
     forgot: Quên tài khoản
     remember: Nhớ tài khoản
   books:
@@ -269,3 +266,82 @@ vi:
     accept: Đang mượn
     cancel: Huỷ bỏ
     payed: Đã trả
+  devise:
+    confirmations:
+      confirmed: "Địa chỉ email của bạn đã được xác nhận thành công."
+      send_instructions: "Bạn sẽ nhận được một email có hướng dẫn về cách xác
+        nhận địa chỉ email của bạn sau vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại,
+        bạn sẽ nhận được một email có hướng dẫn về cách
+        xác nhận địa chỉ email của bạn trong vài phút."
+    failure:
+      already_authenticated: "Bạn đã đăng nhập."
+      inactive: "Tài khoản của bạn chưa được kich hoạt."
+      invalid: "Tài khoản hoặc mật khẩu không hợp lệ"
+      locked: "Tài khoản của bạn đã bị khoá"
+      last_attempt: "Bạn còn một lần thử nữa trước khi tài khoản của bạn bị khóa."
+      not_found_in_database: "Tài khoản hoặc mật khẩu không hợp lệ."
+      timeout: "Phiên đăng nhập kết thúc, mời bạn đăng nhập lạị"
+      unauthenticated: "Bạn cần đăng nhập hoặc đăng kí để tiếp tục."
+      unconfirmed: "Bạn phải xác nhập email để xác nhận."
+    mailer:
+      confirmation_instructions:
+        subject: "Xác nhận hướng dẫn"
+      reset_password_instructions:
+        subject: "Đặt lại hướng dẫn mật khẩu"
+      unlock_instructions:
+        subject: "Hướng dẫn mở khoá"
+      email_changed:
+        subject: "Tài khoản đã được thay đổi"
+      password_change:
+        subject: "Mật khẩu đã được thay đổi"
+    omniauth_callbacks:
+      failure: "Không thể xác nhận %{kind} bởi vì \"%{reason}\"."
+      success: "Xác nhận thành công %{kind}."
+    passwords:
+      no_token: "Bạn không thể truy cập trang này nếu không gửi email đặt lại
+        mật khẩu. Nếu bạn đến từ email đặt lại mật khẩu, vui lòng đảm bảo rằng
+        bạn đã sử dụng URL đầy đủ được cung cấp"
+      send_instructions: " Bạn sẽ nhận được một email hướng dẫn về cách đặt lại mật khẩu của mình sau vài phút ."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại,
+        bạn sẽ nhận được liên kết khôi phục mật khẩu tại địa chỉ email của mình sau vài phút."
+      updated: "Mật khẩu thay đổi thanh công, mời bạn đăng nhập."
+      updated_not_active: "Mật khẩu thay đổi thành công."
+    registrations:
+      destroyed: "Tạm biệt! Tài khoản của bạn đã được hủy thành công.
+        Mong rằng chúng tôi sẽ sớm gặp lại bạn."
+      signed_up: "Chào mừng! Bạn đã đăng ký thành công."
+      signed_up_but_inactive: "Bạn đăng ký thành công tuy nhiên chưa kích hoạt tài khoản"
+      signed_up_but_locked: "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập cho bạn vì tài khoản của bạn bị khóa."
+      signed_up_but_unconfirmed: "Một tin nhắn với một liên kết xác nhận đã được gửi đến địa chỉ email của bạn.
+        Vui lòng nhấp vào liên kết để kích hoạt tài khoản của bạn."
+      update_needs_confirmation: "Bạn đã cập nhật tài khoản của mình thành công,
+        nhưng chúng tôi cần xác minh địa chỉ email mới của bạn.
+        Vui lòng kiểm tra email của bạn và nhấp vào liên kết xác nhận để xác
+        nhận địa chỉ email mới của bạn."
+      updated: "Tài khoản của bạn đã được apdate thành công."
+      updated_but_not_signed_in: "Tài khoản của chúng tôi đã được cập nhật
+        thành công, nhưng vì mật khẩu của bạn đã được thay đổi, bạn cần đăng nhập lại"
+    sessions:
+      signed_in: "Đăng kí thành công."
+      signed_out: "Đăng xuất thành công."
+      already_signed_out: "Đăng xuất thành công."
+    unlocks:
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản của mình trong vài phút nữa."
+      send_paranoid_instructions: "Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản sau vài phút."
+      unlocked: "Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục."
+  errors:
+    messages:
+      already_confirmed: "Đã được xác nhận, vui lòng thử đăng nhập"
+      confirmation_period_expired: "Cần xác nhận %{period}, vui lòng yêu cầu một cái mới"
+      expired: "đã hết hạn, vui lòng yêu cầu một cái mới"
+      not_found: "Không tìm thấy"
+      not_locked: "không bị khóa"
+      not_saved:
+        one: "1 lỗi bị cấm %{resource} khỏi được cứu"
+        other: "%{count} lỗi này %{resource} khỏi được cứu"
+  authenticate:
+    login: Đăng nhập
+    signin: Đăng kí
+    forgotpass: Quên mật khẩu?
+    confirmable: Không nhận được hướng dẫn xác nhận
