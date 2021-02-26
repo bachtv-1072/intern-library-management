@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable,
+         :recoverable, :rememberable, :validatable, :lockable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   USERS_PARAMS = %i(name
@@ -13,7 +12,7 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = Settings.validation.user.format.email
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :lockable
 
   validates :name, presence: true,
     length: {maximum: Settings.validation.user.name_size}
@@ -22,6 +21,7 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: true}
   validates :password, presence: true,
     length: {minimum: Settings.validation.user.password_size}
+  validate :password_regex
 
   has_many :borrowings, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -61,5 +61,11 @@ class User < ApplicationRecord
         user.skip_confirmation!
       end
     end
+  end
+
+  def password_regex
+    return if password.blank? || password =~ Settings.validation.user.password
+
+    errors.add :password, I18n.t("valid.password")
   end
 end
