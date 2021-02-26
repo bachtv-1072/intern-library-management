@@ -7,6 +7,9 @@ class User < ApplicationRecord
                     phone_number).freeze
   VALID_EMAIL_REGEX = Settings.validation.user.format.email
 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
   validates :name, presence: true,
     length: {maximum: Settings.validation.user.name_size}
   validates :email, presence: true,
@@ -28,8 +31,6 @@ class User < ApplicationRecord
   acts_as_paranoid
 
   before_save :downcase_email
-
-  has_secure_password
 
   def downcase_email
     email.downcase!

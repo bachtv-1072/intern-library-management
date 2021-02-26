@@ -78,7 +78,7 @@
   </div>
   <div class="row kpx_row-sm-offset-3">
     <div class="col-xs-12 col-sm-6">
-      <%= form_for :session, url: login_path, class: "kpx_loginForm" do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="input-group">
           <span class="input-group-addon"><span class="fa fa-user"></span></span>
           <%= f.email_field :email, class: "form-control",
@@ -90,24 +90,21 @@
           <%= f.password_field :password, class: "form-control",
             placeholder: t("sessions.new.placeholder.password") %>
         </div>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, t("sessions.remember") %>
+          </div>
+        <% end %>
         <hr />
         <%= f.submit t("sessions.new.submit"),
-          class: "btn btn-lg btn-outline-primary btn-block" %>
-			<% end %>
-	  </div>
-  </div>
-  <div class="row kpx_row-sm-offset-3">
-    <div class="col-xs-12 col-sm-3">
-    <p></p>
-    <label class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" value="remember-me">
-      <span class="custom-control-indicator"></span>
-      <span class="custom-control-description"><%= t".remember"%></span>
-    </label>
+            class: "btn btn-lg btn-outline-primary btn-block" %>
+      <% end %>
+    </div>
   </div>
   <div class="col-xs-12 col-sm-3">
     <p class="kpx_forgotPwd">
-      <%= link_to t(".forgot"), "#" %>
+      <%= render "devise/shared/links" %>
     </p>
   </div>
 </div>

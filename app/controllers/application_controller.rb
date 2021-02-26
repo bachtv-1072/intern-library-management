@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
-  include SessionsHelper
 
   before_action :set_locale
 
@@ -19,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    return if logged_in?
+    return if user_signed_in?
 
     flash[:danger] = t ".require_login"
     redirect_to login_url
