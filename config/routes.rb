@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: { sessions: "devise/sessions",
+                                    omniauth_callbacks: "omniauth_callbacks" }
   scope "(:locale)", locale: /en|vi/ do
-    devise_for :users, controllers: { sessions: "devise/sessions" }
     namespace :admin do
       root "adminpages#home"
       resources :users, only: %i(index destroy)
