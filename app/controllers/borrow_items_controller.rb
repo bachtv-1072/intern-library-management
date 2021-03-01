@@ -1,4 +1,6 @@
 class BorrowItemsController < ApplicationController
+  load_and_authorize_resource except: :destroy
+
   before_action :action_for_form, only: %i(index destroy)
 
   def index

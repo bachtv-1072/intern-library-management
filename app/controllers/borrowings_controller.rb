@@ -1,10 +1,14 @@
 class BorrowingsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :require_login, only: :create
 
   def index
-    @borrowings = current_user.borrowings.page(params[:page]).per(
-      Settings.panigate.category
-    )
+    @borrowings = current_user.borrowings
+                              .accessible_by(current_ability)
+                              .order_borrowing
+                              .page(params[:page])
+                              .per Settings.panigate.category
   end
 
   def create

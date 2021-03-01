@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe BorrowingsController, type: :controller do
-  let(:user) {FactoryBot.create :user, id: 1}
+  let(:user) {FactoryBot.create :user, role: 0}
   let(:category) {FactoryBot.create :category}
   let(:author) {FactoryBot.create :author}
   let(:publisher) {FactoryBot.create :publisher}

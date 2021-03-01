@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  rescue_from CanCan::AccessDenied, with: :not_authorized
 
   before_action :set_locale
 
@@ -26,5 +27,10 @@ class ApplicationController < ActionController::Base
 
   def set_ransack_auth_object
     current_user&.admin? ? :admin : nil
+  end
+
+  def not_authorized
+    redirect_to root_path
+    flash[:warning] = t("decentralization.message")
   end
 end
