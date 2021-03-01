@@ -29,9 +29,10 @@ jobs:
       MYSQL_ROOT_PASSWORD: password_test
   before_script:
   - bundle _2.1.2_ install --path vendor/bundle
+  - mkdir .sun-ci
   script:
   - RAILS_ENV=test bundle exec rails db:drop db:create db:migrate
-  - bundle _2.1.2_ exec rspec
+  - bundle _2.1.2_ exec rspec --format html --out .sun-ci/rspec.html spec/
   artifacts:
     name: rspec_report
     paths:
