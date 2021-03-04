@@ -12,6 +12,7 @@ class Admin::BorrowingsController < Admin::BaseController
     if @borrowing.pending?
       @borrowing.accept_borrowing
       @borrowing.accept!
+      SendEmailAcceptBorrowingJob.set(wait: 2.minutes).perform_later @borrowing
     else
       @borrowing.payed!
     end
@@ -21,6 +22,7 @@ class Admin::BorrowingsController < Admin::BaseController
   def destroy
     @success = @borrowing.cancel!
     @borrowing.borrowing_cancel
+    SendEmailAcceptBorrowingJob.perform_later @borrowing
     respond_to :js
   end
 

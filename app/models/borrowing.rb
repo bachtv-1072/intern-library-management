@@ -34,11 +34,10 @@ class Borrowing < ApplicationRecord
       date_borrow: updated_at,
       date_pay: updated_at + Settings.date.day
     )
-    BorrowingMailer.new_borrowing(self).deliver_later
   end
 
   def borrowing_cancel
-    BorrowingMailer.cancel_borrowing(self).deliver_later
+    return_book
   end
 
   class << self

@@ -37,3 +37,4 @@ status:
   pending: 0
 enum:
   payed: 3
+  cancel: 2

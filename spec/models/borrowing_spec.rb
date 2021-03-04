@@ -65,21 +65,13 @@ RSpec.describe Borrowing, type: :model do
 
   describe ".accept_borrowing" do
     it "return ActionMailer when accept borrowing" do
-      expect(borrowing_two.accept_borrowing.class).to eq ActionMailer::MailDeliveryJob
-    end
-
-    it "return object haved to accept" do
-      expect(borrowing_two.accept_borrowing.arguments.last[:args]).to eq [borrowing_two]
+      expect(borrowing_two.accept_borrowing.class).to eq TrueClass
     end
   end
 
   describe ".borrowing_cancel" do
     it "return ActionMailer when cancel borrowing" do
-      expect(borrowing_two.borrowing_cancel.class).to eq ActionMailer::MailDeliveryJob
-    end
-
-    it "return object haved to cancel" do
-      expect(borrowing_two.borrowing_cancel.arguments.last[:args]).to eq [borrowing_two]
+      expect(borrowing_two.borrowing_cancel.class).to eq Array
     end
   end
 

@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable,
+         :recoverable, :rememberable, :validatable, :lockable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   USERS_PARAMS = %i(name
