@@ -4,9 +4,11 @@
       Settings.panigate.category %>
   </td>
   <td>
-    <%= link_to "#" , data: { toggle: "modal", target: "#borrowing-#{borrowing.id}"} do %>
+    <%= link_to "#" , data: { toggle: "modal",
+      target: "#borrowingDetail-#{borrowing.id}"} do %>
       <%= borrowing.borrow_code %>
     <% end %>
+    <%= render "borrowing_detail", borrowing: borrowing %>
   </td>
   <td><%= borrowing.books.size %></td>
   <td>

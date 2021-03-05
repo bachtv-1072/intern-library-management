@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.page(params[:page]).per Settings.panigate.book
+    @books_to_publisher = Book.filter_by_publisher params[:id]
+    @books = @books_to_publisher.page(params[:page])
+                                .per Settings.panigate.book
     @categories = Category.all
     @authors = Author.all
   end

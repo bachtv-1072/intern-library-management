@@ -1,0 +1,24 @@
+<%= search_form_for @search, class: "form-inline" do |f| %>
+  <div class="form-group">
+    <span><%= t ".borrow_code" %></span>
+    <%= f.search_field :borrow_code_cont,
+      class: "form-control code_value",
+      placeholder: t(".borrow_code") %>
+  </div>
+
+  <div class="form-group">
+    <span><%= t ".date_borrow" %></span>
+    <%= f.date_field :date_borrow_gteq, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <span><%= t ".date_pay" %></span>
+    <%= f.date_field :date_pay_lteq, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <span><%= t ".status" %></span>
+      <%= f.select :status_eq,
+        options_for_select(Borrowing.statuses), {include_blank: t(".all")},
+        class: "form-control" %>
+  </div>
+  <%= f.submit t(".search"), class: "btn btn-success" %>
+<% end %>

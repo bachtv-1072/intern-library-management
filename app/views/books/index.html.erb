@@ -11,7 +11,7 @@
               <%= render partial: "layouts/list_books/book", collection: @books %>
             </div>
             <ul class="wn__pagination">
-              <%= paginate @books, theme: "twitter-bootstrap-4" %>
+              <%= render "paginate" %>
             </ul>
           </div>
         </div>

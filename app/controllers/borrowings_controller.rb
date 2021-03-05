@@ -4,11 +4,12 @@ class BorrowingsController < ApplicationController
   before_action :require_login, only: :create
 
   def index
-    @borrowings = current_user.borrowings
-                              .accessible_by(current_ability)
-                              .order_borrowing
-                              .page(params[:page])
-                              .per Settings.panigate.category
+    @search = current_user.borrowings.ransack params[:q], auth_object:
+      set_ransack_auth_object
+    @borrowings = @search.result
+                         .order_borrowing
+                         .page(params[:page])
+                         .per(Settings.panigate.category)
   end
 
   def create

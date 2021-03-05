@@ -56,7 +56,7 @@ vi:
     forgot: Quên tài khoản
     remember: Nhớ tài khoản
   books:
-    book:
+    select: Tất cả
     index: Tạo cuốn sách
     comment:
       review: Đánh giá bởi
@@ -163,6 +163,17 @@ vi:
       fail: Xoá thất bại
       succsess: Xoá thành công
   borrowings:
+    borrowing_detail:
+      dateborrow: Ngày mượn
+      datepay: Ngày trả
+    form_search:
+      borrow_code: Mã phiến mượn
+      date_borrow: Khoảng ngày mượn
+      date_pay: Khoảng ngày trả
+      search: Tìm kiếm
+      user_name: Tên người mượn
+      status: Trạng thái
+      all: Tất cả
     destroy:
       success: Xoá thành công
       fail: Xoá thất bại
@@ -244,6 +255,9 @@ vi:
         date_pay: Hạn trả sách
     books:
       book_detail:
+        author: Tác giả
+        publisher: Nhà xuất bản
+        category: Thể loại
         title: Chi tiết cuốn sách
       new:
         name: Tên cuốn sách *

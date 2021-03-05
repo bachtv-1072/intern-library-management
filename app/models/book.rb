@@ -11,7 +11,7 @@ class Book < ApplicationRecord
 
   belongs_to :category, optional: true
   belongs_to :publisher, optional: true
-  belongs_to :authors, optional: true
+  belongs_to :author, optional: true
   has_many :book_details, dependent: :destroy
   has_many :images, dependent: :destroy
   has_many :borrow_items, dependent: :destroy
@@ -33,6 +33,8 @@ class Book < ApplicationRecord
     allow_nil: true
 
   delegate :title, to: :category, prefix: true, allow_nil: true
+  delegate :name, to: :author, prefix: true, allow_nil: true
+  delegate :name, to: :publisher, prefix: true, allow_nil: true
 
   scope :by_ids, ->(ids){where id: ids}
   scope :search_by_name, (lambda do |name|

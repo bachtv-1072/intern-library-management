@@ -8,7 +8,8 @@
       <div class="orderby__wrapper">
         <span><%= t ".title" %></span>
         <%= select_tag :author_id, options_for_select(options_publisher),
-            class:"shot__byselect", id:"ajax_filter" %>
+          include_blank: t("books.select"),
+          class:"shot__byselect", id:"ajax_filter" %>
       </div>
     </div>
   </div>

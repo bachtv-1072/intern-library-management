@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     end
     resources :borrow_items, only: %i(create index destroy)
     resources :borrowings, only: %i(index create)
-    resources :publishers, only: :show
+    resources :publishers, only: :show do
+      resources :books, only: :index
+    end
 
     root "homepages#home"
     get "/search", to: "search#index"
