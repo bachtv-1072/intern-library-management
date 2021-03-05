@@ -5,6 +5,7 @@ validation:
     name_size: 50
     email_size: 50
     password_size: 6
+    password: !ruby/regexp '/^(?=.*?[A-Z])(?=.*?[a-z])/'
     format:
       email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
 category:

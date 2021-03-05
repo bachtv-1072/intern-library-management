@@ -266,6 +266,8 @@ vi:
     accept: Đang mượn
     cancel: Huỷ bỏ
     payed: Đã trả
+  valid:
+    password: phải bao gồm ít nhất 1 chữ hoa, 1 chữ thường
   devise:
     confirmations:
       confirmed: "Địa chỉ email của bạn đã được xác nhận thành công."
@@ -339,7 +341,7 @@ vi:
       not_locked: "không bị khóa"
       not_saved:
         one: "1 lỗi bị cấm %{resource} khỏi được cứu"
-        other: "%{count} lỗi này %{resource} khỏi được cứu"
+        other: "Có %{count} lỗi xuất hịện"
   authenticate:
     login: Đăng nhập
     signin: Đăng kí
