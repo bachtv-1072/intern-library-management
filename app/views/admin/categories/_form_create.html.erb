@@ -12,7 +12,7 @@
         </button>
       </div>
       <%= form_with model: [:admin, @category] do |f| %>
-        <div class="modal-body">
+        <div class="modal-body category">
           <div class="custom-file">
             <%= f.file_field :avatar, class: "custom-file-input",
               id: "customFile" %>

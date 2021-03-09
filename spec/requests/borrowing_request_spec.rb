@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe BorrowingsController, type: :controller do
-  let(:user) {FactoryBot.create :user, role: 0}
+  let(:user) {FactoryBot.create :user, role: :user}
   let(:category) {FactoryBot.create :category}
   let(:author) {FactoryBot.create :author}
   let(:publisher) {FactoryBot.create :publisher}
@@ -34,10 +34,12 @@ RSpec.describe BorrowingsController, type: :controller do
     before {get :index, params: {page: 1}}
 
     it "should render the 'index' template with @borrowings" do
-      aggregate_failures do
         expect(response).to render_template :index
-        expect(assigns(:borrowings)).to eq [borrowing_two, borrowing_three]
-      end
+    end
+
+    it "should render array borrowing" do
+      expect(assigns(:borrowings).pluck(:id)).to eq [borrowing_two.id,
+                                                     borrowing_three.id]
     end
   end
 
