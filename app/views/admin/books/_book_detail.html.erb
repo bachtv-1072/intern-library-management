@@ -10,8 +10,26 @@
       <div class="modal-body">
         <div class="list_imgae_book">
           <div class="row">
-            <%= render collection: book.images,
-            partial: "image" %>
+            <div class="col-md-6">
+              <%= render collection: book.images,
+              partial: "image" %>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <li>
+                  <span><%= t ".author" %>:</span>
+                  <%= book.author_name %>
+                </li>
+                <li>
+                  <span><%= t ".publisher" %>:</span>
+                  <%= book.publisher_name %>
+                </li>
+                <li>
+                  <span><%= t ".category" %>:</span>
+                  <%= book.category_title %>
+                </li>
+              </ul>
+            </div>
           </div>
         <div>
       </div>
