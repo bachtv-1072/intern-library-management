@@ -347,3 +347,5 @@ vi:
     signin: Đăng kí
     forgotpass: Quên mật khẩu?
     confirmable: Không nhận được hướng dẫn xác nhận
+  decentralization:
+    message: Bạn không được cấp quyền cho danh mục này

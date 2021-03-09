@@ -11,9 +11,6 @@ class User < ApplicationRecord
                     phone_number).freeze
   VALID_EMAIL_REGEX = Settings.validation.user.format.email
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :lockable
-
   validates :name, presence: true,
     length: {maximum: Settings.validation.user.name_size}
   validates :email, presence: true,

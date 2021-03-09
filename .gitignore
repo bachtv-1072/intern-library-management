@@ -57,3 +57,5 @@ config/environments/*.local.yml
 /spec/mailers
 coverage/
 config/application.yml
+/spec/jobs
+/.sun-ci
